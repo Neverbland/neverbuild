@@ -2,6 +2,8 @@
 
 [Yeoman](http://yeoman.io) generator that scaffolds out a front-end web app.
 
+![](http://i.imgur.com/5YLfo6S.png)
+
 
 ## Features
 
