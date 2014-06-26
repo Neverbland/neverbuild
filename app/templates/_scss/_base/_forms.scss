@@ -1,0 +1,10 @@
+/* Base styles ~ Forms ***********************/
+%disabled-state {
+    cursor: not-allowed;
+}
+
+html {
+    input[disabled] {
+        @extend %disabled-state;
+    }
+}

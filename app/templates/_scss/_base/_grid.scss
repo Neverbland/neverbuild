@@ -1,0 +1,14 @@
+/* Base grid styles *********************/
+.row    { @include row; }
+.one    { @include span-columns(1); }
+.two    { @include span-columns(2); }
+.three  { @include span-columns(3); }
+.four   { @include span-columns(4); }
+.five   { @include span-columns(5); }
+.six    { @include span-columns(6); }
+.seven  { @include span-columns(7); }
+.eight  { @include span-columns(8); }
+.nine   { @include span-columns(9); }
+.ten    { @include span-columns(10); }
+.eleven { @include span-columns(11); }
+.twelve { @include span-columns(12); }

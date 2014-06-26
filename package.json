@@ -1,0 +1,29 @@
+{
+  "name": "generator-neverbuild",
+  "version": "0.0.1",
+  "description": "Yeoman generator to kickstart NEVERBLAND projects",
+  "keywords": ["yeoman-generator", "generator", "neverbland", "lads", "frontend", "bourbon", "sass", "neat", "grunt"],
+  "license": "MIT",
+  "homepage": "",
+  "main": "app/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:vslio/generator-neverbuild.git"
+  },
+  "author": {
+    "name": "Kostas Vasileiou",
+    "email": "hello@vsl.io"
+  },
+  "engines": {
+    "node": ">=0.11.0"
+  },
+  "dependencies": {
+    "yeoman-generator": "~0.16.0",
+    "chalk": "~0.4.0",
+    "yosay": "^0.2.0"
+  },
+  "devDependencies": {},
+  "peerDependencies": {
+    "yo": "~1.1.2"
+  }
+}

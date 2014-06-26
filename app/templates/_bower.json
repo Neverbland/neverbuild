@@ -1,0 +1,10 @@
+{
+  "name": "<%= _.slugify(appname) %>",
+  "private": true,
+  "dependencies": {
+    "bourbon": "~4.0.2",
+    "neat": "~1.6.0",
+    "jquery": "~1.11.1"
+  },
+  "devDependencies": {}
+}
