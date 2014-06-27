@@ -12,7 +12,7 @@
 * Neat for Bourbon - A lightweight semantic grid framework for SASS and Bourbon
 * jQuery
 
-For more information on what `generator-neverbuild` can do for you, take a look at the [Grunt tasks](https://github.com/yeoman/generator-webapp/blob/master/app/templates/_package.json) used in the `package.json`.
+For more information on what `generator-neverbuild` can do for you, take a look at the [Grunt tasks](https://github.com/vslio/generator-neverbuild/blob/master/app/templates/_package.json) used in the `package.json`.
 
 
 ## Getting Started
