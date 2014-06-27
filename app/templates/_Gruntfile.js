@@ -3,8 +3,8 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         project: {
             app: '<%= _.slugify(appname) %>',
-            assets: '.',
-            scss: ['<%= project.assets %>/scss/app.scss']
+            assets: '',
+            scss: ['<%= project.assets %>scss/app.scss']
         },
         sass: {
             dev: {
@@ -13,7 +13,7 @@ module.exports = function(grunt) {
                     precision: 5
                 },
                 files: {
-                    '<%= project.assets %>/css/app.css': '<%= project.scss %>'
+                    '<%= project.assets %>css/app.css': '<%= project.scss %>'
                 }
             },
             dist: {
@@ -22,7 +22,7 @@ module.exports = function(grunt) {
                     precision: 5
                 },
                 files: {
-                    '<%= project.assets %>/css/app.css': '<%= project.scss %>'
+                    '<%= project.assets %>css/app.css': '<%= project.scss %>'
                 }
             }
         },
@@ -31,7 +31,7 @@ module.exports = function(grunt) {
                 livereload: true
             },
             sass: {
-                files: '<%= project.assets %>/scss/{,**/}*.scss',
+                files: '<%= project.assets %>scss/{,**/}*.scss',
                 tasks: ['sass:dev']
             }
         }
