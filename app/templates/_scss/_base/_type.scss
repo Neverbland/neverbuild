@@ -3,8 +3,6 @@
 $base-font: sans-serif;
 $alt-font: sans-serif;
 
-.alt-font { font-family: $alt-font; }
-
 a {
     color: $link-color;
 }
@@ -64,7 +62,7 @@ h6,
 }
 
 p {
-    margin-bottom: 17px; font-family: inherit; font-weight: normal; @include font(1.4);
+    margin-bottom: 17px; font-family: inherit; font-weight: normal;
 }
 
 hr {
