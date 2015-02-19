@@ -43,6 +43,16 @@ module.exports = function(grunt) {
                 files: '<%= project.assets %>scss/{,**/}*.scss',
                 tasks: ['sass:dev']
             }
+        },
+        imagemin: {
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= project.assets %>images',
+                    src: '{,*/}*.{gif,jpeg,jpg,png}',
+                    dest: '<%= project.assets %>images'
+                }]
+            }
         }
     });
 
