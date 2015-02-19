@@ -6,6 +6,15 @@ module.exports = function(grunt) {
             assets: '',
             scss: ['<%= project.assets %>scss/app.scss']
         },
+        connect: {
+            dist: {
+                options: {
+                    port: 8888,
+                    // change this to '0.0.0.0' to access the server from outside
+                    hostname: 'localhost'
+                }
+            }
+        },
         sass: {
             dev: {
                 options: {
@@ -39,8 +48,17 @@ module.exports = function(grunt) {
 
     require('load-grunt-tasks')(grunt);
 
+    // Time how long tasks take. Can help when optimizing build times
+    require('time-grunt')(grunt);
+
     grunt.registerTask('default', [
         'sass:dev',
+        'watch'
+    ]);
+
+    grunt.registerTask('serve', [
+        'sass:dev',
+        'connect:dist',
         'watch'
     ]);
 };
