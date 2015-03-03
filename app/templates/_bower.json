@@ -2,8 +2,8 @@
   "name": "<%= _.slugify(appname) %>",
   "private": true,
   "dependencies": {
-    "bourbon": "latest",
-    "neat": "latest",
+    "bourbon": "~4.2.1",
+    "neat": "~1.7.1",
     "normalize.css": "latest",
     "jquery": "~1.11.1"
   },
