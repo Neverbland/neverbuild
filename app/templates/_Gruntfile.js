@@ -19,7 +19,8 @@ module.exports = function(grunt) {
             dev: {
                 options: {
                     style: 'nested',
-                    precision: 5
+                    precision: 5,
+                    sourcemap: 'none'
                 },
                 files: {
                     '<%= project.assets %>css/app.css': '<%= project.scss %>'
