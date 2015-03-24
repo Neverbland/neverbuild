@@ -8,3 +8,11 @@ html {
         @extend %disabled-state;
     }
 }
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}

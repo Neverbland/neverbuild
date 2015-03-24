@@ -3,17 +3,9 @@
 /*  Various project settings
     that need to be set globally    ***********************/
 
-
-/* Base grid options *********************/
-$gutter: 0.3em;
-$border-box-sizing: true;
-$grid-columns: 12;
-$max-width: none;
-$visual-grid: false;
-$visual-grid-color: darken(#EFF7FB, 10%);
-
 /* Bourbon & Neat Libraries ***********************/
-@import "./bower_components/bourbon/dist/_bourbon";
+@import "./bower_components/bourbon/app/assets/stylesheets/_bourbon";
+@import "_base/_grid-settings";
 @import "./bower_components/neat/app/assets/stylesheets/_neat";
 
 /* Own mixins ***********************/
@@ -22,7 +14,7 @@ $visual-grid-color: darken(#EFF7FB, 10%);
 /* Base styles ***********************/
 @import "_base/_colours";
 @import "_base/_easings";
-@import "_base/_normalize";
+@import "./bower_components/normalize.css/_normalize.scss";
 @import "_base/_type";
 @import "_base/_grid";
 @import "_base/_forms";
