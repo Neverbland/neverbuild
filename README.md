@@ -7,10 +7,13 @@
 
 ## Features
 
-* Grunt - Automagically compile your SCSS
+* Grunt
+    - Automagically compile your SCSS
+    - Image optimization
 * Bourbon for Sass - A simple and lightweight mixin library for SASS
 * Neat for Bourbon - A lightweight semantic grid framework for SASS and Bourbon
 * jQuery
+* Basic .editorconfig file for consistency across editors/IDEs
 
 For more information on what `generator-neverbuild` can do for you, take a look at the [Grunt tasks](https://github.com/vslio/generator-neverbuild/blob/master/app/templates/_package.json) used in the `package.json`.
 
