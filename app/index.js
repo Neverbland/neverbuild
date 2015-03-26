@@ -13,7 +13,7 @@ var NEVERGenerator = yeoman.generators.Base.extend({
         var done = this.async();
         var yosay = require('yosay');
 
-        this.log(yosay('Ey, Lad. I\'m here to help you kickstart your new NB project. Grunt, SASS, Bourbon and Neat are included.'));
+        this.log(yosay('Ey, Lad. I\'m here to help you kickstart your new NB project. Grunt, Bourbon and Neat are included.'));
 
         var prompts = [{
             type: 'confirm',
@@ -46,6 +46,7 @@ var NEVERGenerator = yeoman.generators.Base.extend({
         this.template('_bower.json', 'bower.json');
         this.copy('_Gruntfile.js', 'Gruntfile.js');
         this.copy('_gitignore', '.gitignore');
+        this.copy('_editorconfig', '.editorconfig');
     },
 
     projectfiles: function() {
