@@ -75,10 +75,6 @@ var NEVERGenerator = yeoman.generators.Base.extend({
                 this.installDependencies();
             }
         }
-    },
-
-    end: function() {
-        this.spawnCommand('ln', ['-s', this.destinationPath('bower_components/normalize.css/normalize.css'), this.destinationPath('bower_components/normalize.css/_normalize.scss')]);
     }
 });
 
