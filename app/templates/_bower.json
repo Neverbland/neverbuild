@@ -4,7 +4,6 @@
   "dependencies": {
     "bourbon": "~4.2.1",
     "neat": "~1.7.1",
-    "normalize.css": "latest",
     "jquery": "~1.11.1"
   },
   "devDependencies": {}
