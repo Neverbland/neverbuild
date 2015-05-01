@@ -24,20 +24,6 @@ body {
     text-shadow: none;
 }
 
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-    vertical-align: middle;
-}
-
 .no-bullet, %no-bullet {
     list-style: none;
 }
@@ -70,7 +56,8 @@ ul {
     display: none;
 }
 
-.hide-i, %hide-i {
+.hide-i,
+%hide-i {
     display: none !important;
 }
 
