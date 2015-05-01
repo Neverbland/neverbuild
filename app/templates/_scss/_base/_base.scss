@@ -1,4 +1,6 @@
-/* Base styles ---------------------- */
+/**
+ * Base styles
+ */
 html {
     font-family: $base-font;
     font-size: 62.5%;
@@ -17,13 +19,7 @@ body {
  * These selection rule sets have to be separate.
  * Customize the background color to match your design.
  */
-
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
-::selection {
+@include selection {
     background: #b3d4fc;
     text-shadow: none;
 }
@@ -33,7 +29,6 @@ body {
  * images, videos and the bottom of their containers:
  * https://github.com/h5bp/html5-boilerplate/issues/440
  */
-
 audio,
 canvas,
 iframe,
@@ -53,22 +48,34 @@ ul {
     }
 }
 
-/* Commonly used classes---------------------- */
-.fill-remainder, %fill-remainder { float: none; overflow: hidden; } // when we want the last column to fill in the remainder of the row
-.no-margin, %no-margin { margin: 0; }
-.no-margin-i, %no-margin-i { margin: 0 !important; }
-.no-padding, %no-padding { padding: 0; }
-.no-padding-i, %no-padding-i { padding: 0 !important; }
-.hide-c, %hide-c { text-indent: 100%; white-space: nowrap; overflow: hidden; }
-.no-transition, %no-transition { @include transition (all 0s !important); }
-.no-transition-i, %no-transition-i { @include transition (all 0s); }
+.no-bullet,
+%no-bullet {
+    list-style: none;
+}
+
+ul {
+    &.no-bullet {
+        @extend %no-bullet;
+    }
+}
 
 /* Misc ---------------------- */
-.left, %left { float: left; }
-.right, %right { float: right; }
-.text-left, %text-left { text-align: left; }
-.text-right, %text-right { text-align: right; }
-.text-center, %text-center { text-align: center; }
-.no-list-style, %no-list-style { list-style: none; }
-.hide, %hide { display: none; }
-.hide-i, %hide-i { display: none !important; }
+.no-list-style,
+%no-list-style {
+    list-style: none;
+}
+
+.hide,
+%hide {
+    display: none;
+}
+
+.hide-i, %hide-i {
+    display: none !important;
+}
+
+// When we want the last column to fill in the remainder of the row
+.fill-remainder,
+%fill-remainder {
+    float: none; overflow: hidden;
+}
