@@ -94,6 +94,9 @@ linters:
   TrailingSemicolon:
     enabled: true
 
+  UnnecessaryMantissa:
+    enabled: true
+
   UrlQuotes:
     enabled: true
 
