@@ -1,0 +1,37 @@
+/**
+ * For more info: http://jscs.info/rules.html
+ */
+{
+    "preset": "airbnb",
+    "validateIndentation": 4,
+    "excludeFiles": ["**/node_modules/**"],
+    "disallowMixedSpacesAndTabs": true,
+    "disallowMultipleLineBreaks": true,
+    "disallowMultipleLineStrings": true,
+    "disallowMultipleSpaces": true,
+    "disallowMultipleVarDecl": true,
+    "disallowNewlineBeforeBlockStatements": true,
+    "disallowOperatorBeforeLineBreak": ["+", "."],
+    "disallowPaddingNewLinesAfterBlocks": true,
+    "disallowPaddingNewLinesBeforeLineComments": true,
+    "validateParameterSeparator": ", ",
+    "validateQuoteMarks": "'",
+    "requireYodaConditions": false,
+    "requireSpaceBetweenArguments": true,
+    "disallowPaddingNewlinesBeforeKeywords": [
+        "do",
+        "for",
+        "if",
+        "else",
+        "switch",
+        "case",
+        "try",
+        "catch",
+        "void",
+        "while",
+        "with",
+        "return",
+        "typeof",
+        "function"
+    ]
+}
