@@ -61,13 +61,13 @@ var NEVERGenerator = yeoman.generators.Base.extend({
 
                 this.log(chalk.magenta('[ Installing the SASS gem ]'));
 
-                gemSpawn = this.spawnCommand('sudo', ['gem', 'install', 'sass', '-v', '3.3.8']);
+                gemSpawn = this.spawnCommand('sudo', ['gem', 'install', 'sass', '-v', '3.4.13']);
 
                 gemSpawn.on('close', function(code) {
                     if (code) {
                         this.log(chalk.red('Gem couldn\'t be installed! WAT! Error: ' + code));
                     } else {
-                        this.log(chalk.green('Gem installed successfully! Amazing.'));
+                        this.log(chalk.green('Gem installed successfully. Wow.'));
                         this.installDependencies();
                     }
                 }.bind(this));
