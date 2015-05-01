@@ -1,5 +1,5 @@
 /**
- * For more info: http://jscs.info/rules.html
+ * Documentation: http://jscs.info/rules.html
  */
 {
     "preset": "airbnb",
