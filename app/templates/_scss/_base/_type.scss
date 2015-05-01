@@ -14,60 +14,62 @@ h3, .h3, %h3,
 h4, .h4, %h4,
 h5, .h5, %h5,
 h6, .h6, %h6 {
+    margin: 14px 0;
     font-family: $alt-font;
     font-weight: normal;
     font-style: normal;
     color: $heading-colour;
     text-rendering: optimizeLegibility;
-    margin: 14px 0;
 }
 
 h1,
 .h1,
 %h1 {
-    @include font(4.4, 1.1);
+    @include font(4.4, 4.84);
 }
 
 h2,
 .h2,
 %h2 {
-    @include font(3.7, 1.1);
+    @include font(3.7, 4.07);
 }
 
 h3,
 .h3,
 %h3 {
-    @include font(2.7, 1.1);
+    @include font(2.7, 2.97);
 }
 
 h4,
 .h4,
 %h4 {
-    @include font(2.3, 1.1);
+    @include font(2.3, 2.53);
 }
 
 h5,
 .h5,
 %h5 {
-    @include font(1.7, 1.1);
+    @include font(1.7, 1.87);
 }
 
 h6,
 .h6,
 %h6 {
-    @include font(1.4, 1.1);
+    @include font(1.4, 1.58);
 }
 
 p {
-    margin-bottom: 17px; font-family: inherit; font-weight: normal;
+    margin-bottom: 17px;
+    font-family: inherit;
+    font-weight: normal;
 }
 
 hr {
+    margin: 22px 0 21px;
+    height: 0;
     border: solid $hr-color;
     border-width: 1px 0 0;
     clear: both;
-    margin: 22px 0 21px;
-    height: 0;
 }
 
 em,
