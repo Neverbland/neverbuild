@@ -1,6 +1,3 @@
-/**
- * Documentation: http://jscs.info/rules.html
- */
 {
     "preset": "airbnb",
     "validateIndentation": 4,
@@ -16,7 +13,6 @@
     "disallowPaddingNewLinesBeforeLineComments": true,
     "validateParameterSeparator": ", ",
     "validateQuoteMarks": "'",
-    "requireYodaConditions": false,
     "requireSpaceBetweenArguments": true,
     "disallowPaddingNewlinesBeforeKeywords": [
         "do",
