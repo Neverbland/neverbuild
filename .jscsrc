@@ -8,26 +8,24 @@
     "disallowMultipleSpaces": true,
     "disallowMultipleVarDecl": true,
     "disallowNewlineBeforeBlockStatements": true,
-    "disallowOperatorBeforeLineBreak": ["+", "."],
-    "disallowPaddingNewLinesAfterBlocks": true,
-    "disallowPaddingNewLinesBeforeLineComments": true,
+    "disallowOperatorBeforeLineBreak": [
+        "+",
+        "."
+    ],
     "validateParameterSeparator": ", ",
     "validateQuoteMarks": "'",
     "requireSpaceBetweenArguments": true,
+    "requirePaddingNewLinesAfterBlocks": {
+        "allExcept": [
+            "inCallExpressions",
+            "inArrayExpressions",
+            "inProperties"
+        ]
+    },
     "disallowPaddingNewlinesBeforeKeywords": [
-        "do",
-        "for",
-        "if",
         "else",
-        "switch",
-        "case",
-        "try",
         "catch",
         "void",
-        "while",
-        "with",
-        "return",
-        "typeof",
-        "function"
+        "typeof"
     ]
 }
