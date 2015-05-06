@@ -47,6 +47,8 @@ var NEVERGenerator = yeoman.generators.Base.extend({
         this.copy('_Gruntfile.js', 'Gruntfile.js');
         this.copy('_gitignore', '.gitignore');
         this.copy('_editorconfig', '.editorconfig');
+        this.copy('_jscsrc', '.jscsrc');
+        this.copy('_scss-lint.yml', '.scss-lint.yml');
     },
 
     projectfiles: function() {

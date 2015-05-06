@@ -1,0 +1,106 @@
+# Documentation: https://github.com/brigade/scss-lint/blob/master/lib/scss_lint/linter/README.md
+linters:
+  BorderZero:
+    enabled: true
+    convention: none
+
+  ColorKeyword:
+    enabled: true
+
+  ColorVariable:
+    enabled: false
+
+  Comment:
+    enabled: false
+
+  DebugStatement:
+    enabled: true
+
+  DeclarationOrder:
+    enabled: true
+
+  DuplicateProperty:
+    enabled: true
+    exclude:
+      - bower_components/**/*.scss
+
+  EmptyLineBetweenBlocks:
+    enabled: false
+
+  EmptyRule:
+    enabled: true
+
+  HexNotation:
+    enabled: false
+
+  ImportantRule:
+    enabled: false
+
+  Indentation:
+    enabled: true
+    width: 4
+
+  LeadingZero:
+    enabled: true
+    style: include_zero
+
+  NestingDepth:
+    enabled: true
+
+  PlaceholderInExtend:
+    enabled: true
+
+  PropertySortOrder:
+    enabled: false
+
+  QualifyingElement:
+    enabled: true
+    allow_element_with_attribute: true
+
+  SelectorDepth:
+    enabled: true
+
+  SelectorFormat:
+    enabled: true
+    convention: hyphenated_BEM
+
+  SingleLinePerProperty:
+    enabled: true
+    allow_single_line_rule_sets: false
+
+  SingleLinePerSelector:
+    enabled: true
+
+  SpaceAfterComma:
+    enabled: true
+
+  SpaceAfterPropertyColon:
+    enabled: true
+    style: one_space
+
+  SpaceBeforeBrace:
+    enabled: true
+    allow_single_line_padding: true
+    style: space
+
+  SpaceBetweenParens:
+    enabled: true
+    spaces: 0
+
+  StringQuotes:
+    enabled: true
+    style: double_quotes
+
+  TrailingSemicolon:
+    enabled: true
+
+  UnnecessaryMantissa:
+    enabled: true
+
+  UrlQuotes:
+    enabled: true
+
+  VariableForProperty:
+    enabled: true
+    properties:
+      - color
