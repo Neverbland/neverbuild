@@ -24,16 +24,6 @@ body {
     text-shadow: none;
 }
 
-.no-bullet, %no-bullet {
-    list-style: none;
-}
-
-ul {
-    &.no-bullet {
-        @extend %no-bullet;
-    }
-}
-
 .no-bullet,
 %no-bullet {
     list-style: none;
@@ -46,23 +36,14 @@ ul {
 }
 
 /* Misc ---------------------- */
-.no-list-style,
-%no-list-style {
-    list-style: none;
-}
-
 .hide,
 %hide {
     display: none;
 }
 
-.hide-i,
-%hide-i {
-    display: none !important;
-}
-
 // When we want the last column to fill in the remainder of the row
 .fill-remainder,
 %fill-remainder {
-    float: none; overflow: hidden;
+    float: none;
+    overflow: hidden;
 }
