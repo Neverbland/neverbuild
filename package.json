@@ -4,11 +4,11 @@
   "description": "Yeoman generator to kickstart NEVERBLAND projects",
   "keywords": ["yeoman-generator", "generator", "neverbland", "lads", "frontend", "bourbon", "sass", "neat", "grunt"],
   "license": "MIT",
-  "homepage": "https://github.com/vslio/generator-neverbuild",
+  "homepage": "https://github.com/Neverbland/generator-neverbuild",
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:vslio/generator-neverbuild.git"
+    "url": "git@github.com:Neverbland/generator-neverbuild.git"
   },
   "author": {
     "name": "Kostas Vasileiou",
