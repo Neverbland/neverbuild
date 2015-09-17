@@ -12,6 +12,7 @@
         "+",
         "."
     ],
+    "requireTrailingComma": false,
     "validateParameterSeparator": ", ",
     "validateQuoteMarks": "'",
     "requireSpaceBetweenArguments": true,
