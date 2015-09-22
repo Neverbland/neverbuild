@@ -4,9 +4,9 @@
     that need to be set globally    ***********************/
 
 /* Bourbon & Neat Libraries ***********************/
-@import "./bower_components/bourbon/app/assets/stylesheets/_bourbon";
+@import "../bower_components/bourbon/app/assets/stylesheets/_bourbon";
 @import "_base/_grid-settings";
-@import "./bower_components/neat/app/assets/stylesheets/_neat";
+@import "../bower_components/neat/app/assets/stylesheets/_neat";
 
 /* Own mixins ***********************/
 @import "_addons/_rem"; // Rem sizing mixin
@@ -30,4 +30,3 @@
 
 /* Plugin styles
    Put them inside "plugins" folder ***********************/
-
