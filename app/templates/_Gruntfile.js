@@ -1,15 +1,16 @@
 module.exports = function(grunt) {
+    grunt.project = {
+        name: '<%= slugName %>',
+        assetsFolder: ''
+    };
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        project: {
-            app: '<%= _.slugify(appname) %>',
-            assets: '',
-            scss: ['<%= project.assets %>scss/app.scss']
-        },
         connect: {
             dist: {
                 options: {
                     port: 8888,
+
                     // Change this to '0.0.0.0' to access the server from outside
                     hostname: 'localhost'
                 }
@@ -18,22 +19,29 @@ module.exports = function(grunt) {
         sass: {
             dev: {
                 options: {
-                    style: 'nested',
-                    precision: 5,
-                    sourcemap: 'none'
+                    outputStyle: 'nested',
+                    sourcemap: true
                 },
-                files: {
-                    '<%= project.assets %>css/app.css': '<%= project.scss %>'
-                }
+                files: [{
+                    expand: true,
+                    cwd: grunt.project.assetsFolder + 'scss',
+                    src: ['app.scss'],
+                    dest: grunt.project.assetsFolder + 'css',
+                    ext: '.css'
+                }]
             },
             dist: {
                 options: {
-                    style: 'nested',
-                    precision: 5
+                    outputStyle: 'compressed',
+                    sourcemap: false
                 },
-                files: {
-                    '<%= project.assets %>css/app.css': '<%= project.scss %>'
-                }
+                files: [{
+                    expand: true,
+                    cwd: grunt.project.assetsFolder + 'scss',
+                    src: ['app.scss'],
+                    dest: grunt.project.assetsFolder + 'css',
+                    ext: '.css'
+                }]
             }
         },
         watch: {
@@ -41,7 +49,7 @@ module.exports = function(grunt) {
                 livereload: true
             },
             sass: {
-                files: '<%= project.assets %>scss/{,**/}*.scss',
+                files: grunt.project.assetsFolder + 'scss/{,**/}*.scss',
                 tasks: ['sass:dev']
             }
         },
@@ -49,9 +57,9 @@ module.exports = function(grunt) {
             dist: {
                 files: [{
                     expand: true,
-                    cwd: '<%= project.assets %>images',
+                    cwd: grunt.project.assetsFolder + 'images',
                     src: '{,*/}*.{gif,jpeg,jpg,png}',
-                    dest: '<%= project.assets %>images'
+                    dest: grunt.project.assetsFolder + 'images'
                 }]
             }
         }
