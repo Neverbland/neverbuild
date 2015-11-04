@@ -1,6 +1,6 @@
 {
   "name": "generator-neverbuild",
-  "version": "0.0.7",
+  "version": "1.0.0-RC",
   "description": "Yeoman generator to kickstart NEVERBLAND projects",
   "keywords": ["yeoman-generator", "generator", "neverbland", "lads", "frontend", "bourbon", "sass", "neat", "grunt"],
   "license": "MIT",
@@ -19,12 +19,11 @@
     "node": ">=0.11.0"
   },
   "dependencies": {
-    "yeoman-generator": "~0.18.9",
-    "chalk": "~0.5.1",
-    "yosay": "^1.0.2"
-  },
-  "devDependencies": {},
-  "peerDependencies": {
-    "yo": "^1.1"
+    "yeoman-generator": "~0.21",
+    "chalk": "~1.1",
+    "yosay": "~1.0",
+    "underscore.string": "~3.2",
+    "mkdirp": "~0.5",
+    "yo": "~1.5"
   }
 }
