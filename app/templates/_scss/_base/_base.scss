@@ -3,13 +3,14 @@
  */
 html {
     font-family: $base-font;
-    font-size: 62.5%;
+    font-size: 100%;
+    $em-base: 16px;
 }
 
 body {
   position: relative;
-  background-color: $background-color;
-  color: $color;
+  background-color: $background-colour;
+  color: $colour;
 }
 
 /*
@@ -20,18 +21,18 @@ body {
  * Customize the background color to match your design.
  */
 @include selection {
-    background: #b3d4fc;
+    background: $selection-colour;
     text-shadow: none;
 }
 
-.no-bullet,
-%no-bullet {
+.no-list-style,
+%no-list-style {
     list-style: none;
 }
 
 ul {
-    &.no-bullet {
-        @extend %no-bullet;
+    &.no-list-style {
+        @extend %no-list-style;
     }
 }
 

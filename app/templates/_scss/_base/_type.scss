@@ -1,19 +1,34 @@
 /**
- * Base styles ~ Type
+ * Base ~ Type
  */
-$base-font: sans-serif;
-$alt-font: sans-serif;
 
-a {
-    color: $link-color;
-}
+/**
+ * Type variables
+ */
+$base-font: sans-serif !default;
+$alt-font: sans-serif !default;
 
-h1, .h1, %h1,
-h2, .h2, %h2,
-h3, .h3, %h3,
-h4, .h4, %h4,
-h5, .h5, %h5,
-h6, .h6, %h6 {
+/**
+ * Type styles
+ */
+h1,
+.h1,
+%h1,
+h2,
+.h2,
+%h2,
+h3,
+.h3,
+%h3,
+h4,
+.h4,
+%h4,
+h5,
+.h5,
+%h5,
+h6,
+.h6,
+%h6 {
     margin: 14px 0;
     font-family: $alt-font;
     font-weight: normal;
@@ -25,37 +40,48 @@ h6, .h6, %h6 {
 h1,
 .h1,
 %h1 {
-    @include font(4.4, 4.84);
+    font-size: rem(44);
+    line-height: 48.4px;
 }
 
 h2,
 .h2,
 %h2 {
-    @include font(3.7, 4.07);
+    font-size: rem(37);
+    line-height: 40.7px;
 }
 
 h3,
 .h3,
 %h3 {
-    @include font(2.7, 2.97);
+    font-size: rem(27);
+    line-height: 29.7px;
 }
 
 h4,
 .h4,
 %h4 {
-    @include font(2.3, 2.53);
+    font-size: rem(23);
+    line-height: 25.3px;
 }
 
 h5,
 .h5,
 %h5 {
-    @include font(1.7, 1.87);
+    font-size: rem(17);
+    line-height: 18.7px;
 }
 
 h6,
 .h6,
 %h6 {
-    @include font(1.4, 1.58);
+    font-size: rem(14);
+    line-height: 15.8px;
+}
+
+a {
+    color: $link-colour;
+    text-decoration: none;
 }
 
 p {
@@ -67,7 +93,7 @@ p {
 hr {
     margin: 22px 0 21px;
     height: 0;
-    border: solid $hr-color;
+    border: solid $hr-colour;
     border-width: 1px 0 0;
     clear: both;
 }
