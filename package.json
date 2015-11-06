@@ -24,6 +24,6 @@
     "yosay": "~1.0",
     "underscore.string": "~3.2",
     "mkdirp": "~0.5",
-    "yo": "~1.5"
+    "yo": "~1.5.0"
   }
 }
