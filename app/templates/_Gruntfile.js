@@ -44,6 +44,13 @@ module.exports = function(grunt) {
                 }]
             }
         },
+        stripCssComments: {
+            dist: {
+                files: {
+                    'css/app.css': 'css/app.css'
+                }
+            }
+        },
         watch: {
             options: {
                 livereload: true
@@ -73,6 +80,11 @@ module.exports = function(grunt) {
     grunt.registerTask('default', [
         'sass:dev',
         'watch'
+    ]);
+
+    grunt.registerTask('dist', [
+        'sass:dist',
+        'stripCssComments:dist'
     ]);
 
     grunt.registerTask('serve', [
