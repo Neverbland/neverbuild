@@ -17,7 +17,7 @@ var NEVERGenerator = yeoman.generators.Base.extend({
         this.imagesFolder = 'images';
         this.scssFolder = 'scss';
         this.cssFolder = 'css';
-        this.jsFolder = 'javascript';
+        this.jsFolder = 'js';
 
         this.log(chalk.magenta(
             '[ Creating the structure. ]' +
