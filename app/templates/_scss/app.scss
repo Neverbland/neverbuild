@@ -1,20 +1,25 @@
 /**
- * Main Project imports
- */
-
-/**
  * Various project settings that need to be set globally
  */
 
-/**
- * Bourbon & Neat Libraries
- */
-@import "../node_modules/bourbon/app/assets/stylesheets/_bourbon";
 
-// Uncomment to enable Neat
-// @import "_base/_grid-settings";
-// @import "../node_modules/bourbon-neat/app/assets/stylesheets/_neat-helpers";
-// @import "../node_modules/bourbon-neat/app/assets/stylesheets/_neat";
+/**
+ * Optional addons
+ */
+// @import "_addons/_ratios";
+// @import "_addons/_colour-manager";
+// @import "_addons/_clearfix";
+// @import "_addons/_family";
+// @import "_addons/_px-to-em";
+// @import "_addons/_px-to-rem";
+
+
+
+/**
+ * Bootstrap v4 grid system
+ * http://v4-alpha.getbootstrap.com/layout/grid/
+ */
+@import "_grid/bootstrap-grid";
 
 /**
  * Base styles
@@ -23,7 +28,6 @@
 @import "_base/_easings";
 @import "_base/_normalize";
 @import "_base/_type";
-@import "_base/_grid";
 @import "_base/_forms";
 @import "_base/_base";
 
@@ -31,7 +35,6 @@
  * Reusable Component styles (header/footer/dropdowns etc)
  * Put them inside "common" folder
  */
-
 
 /**
  * Module styles (individual page styles)
