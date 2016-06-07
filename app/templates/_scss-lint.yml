@@ -21,8 +21,6 @@ linters:
 
   DuplicateProperty:
     enabled: true
-    exclude:
-      - bower_components/**/*.scss
 
   EmptyLineBetweenBlocks:
     enabled: false
