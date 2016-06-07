@@ -6,13 +6,20 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        connect: {
-            dist: {
-                options: {
-                    port: 8888,
-
-                    // Change this to '0.0.0.0' to access the server from outside
-                    hostname: 'localhost'
+        browserSync: {
+            options: {
+                watchTask: true,
+                // you can proxy an existing local server
+                // proxy: "local.dev",
+                server: './'
+            },
+            dev: {
+                bsFiles: {
+                    src : [
+                        grunt.project.assetsFolder + 'css/{,**/}*.css',
+                        grunt.project.assetsFolder + 'js/{,**/}*.js',
+                        grunt.project.assetsFolder + '*.html'
+                    ]
                 }
             }
         },
@@ -60,15 +67,15 @@ module.exports = function(grunt) {
                 tasks: ['sass:dev']
             }
         },
-        imagemin: {
+        autoprefixer: {
+            options: {
+                browsers: ['last 2 versions']
+            },
             dist: {
-                files: [{
-                    expand: true,
-                    cwd: grunt.project.assetsFolder + 'images',
-                    src: '{,*/}*.{gif,jpeg,jpg,png}',
-                    dest: grunt.project.assetsFolder + 'images'
-                }]
-            }
+                files: {
+                    'css/app.css': 'css/app.css'
+                }
+            },
         }
     });
 
@@ -84,12 +91,13 @@ module.exports = function(grunt) {
 
     grunt.registerTask('dist', [
         'sass:dist',
+        'autoprefixer:dist',
         'stripCssComments:dist'
     ]);
 
     grunt.registerTask('serve', [
         'sass:dev',
-        'connect:dist',
+        'browserSync:dev',
         'watch'
     ]);
 };
