@@ -65,6 +65,10 @@ module.exports = function(grunt) {
             sass: {
                 files: grunt.project.assetsFolder + 'scss/{,**/}*.scss',
                 tasks: ['sass:dev']
+            },
+            js: {
+                files: grunt.project.assetsFolder + 'js/**/*.js',
+                tasks: ['concat:dev']
             }
         },
         autoprefixer: {
@@ -76,6 +80,28 @@ module.exports = function(grunt) {
                     'css/app.css': 'css/app.css'
                 }
             },
+        },
+        concat: {
+            options: {
+                separator: ';'
+            },
+            dev: {
+                src: [
+                    grunt.project.assetsFolder + 'js/_vendors/**/*.js',
+                    grunt.project.assetsFolder + 'js/vendors/**/*.js',
+                    grunt.project.assetsFolder + 'js/custom/**/*.js'
+                ],
+                dest: grunt.project.assetsFolder + 'js/app.js'
+            }
+        },
+        uglify: {
+            options: {
+                mangle: false
+            },
+            dist: {
+                src: grunt.project.assetsFolder + 'js/app.js',
+                dest: grunt.project.assetsFolder + 'js/app.js'
+            }
         }
     });
 
@@ -92,7 +118,8 @@ module.exports = function(grunt) {
     grunt.registerTask('dist', [
         'sass:dist',
         'autoprefixer:dist',
-        'stripCssComments:dist'
+        'stripCssComments:dist',
+        'uglify:dist'
     ]);
 
     grunt.registerTask('serve', [
