@@ -8,9 +8,8 @@
     - Automagically compile your SCSS
     - Image optimization
 * libsass
-* Bourbon for Sass - A simple and lightweight mixin library for SASS
-* Neat for Bourbon - A lightweight semantic grid framework for SASS and Bourbon
-* jQuery
+* BrowserSync - Amazing synchronised browser testing
+* Bootstrap grid system with flexbox or floats
 * Basic .editorconfig file for consistency across editors/IDEs
 * jscsrc and scss-lint rules
 
@@ -22,7 +21,9 @@ For more information on what `generator-neverbuild` can do for you, take a look 
 - Install: `npm install -g generator-neverbuild`
 - Create project directory and cd into it: `mkdir project-name && cd $_`
 - Run: `yo neverbuild`
-- Run `grunt` for building & watch + compile your SCSS files
+- Run `grunt` to watch and compile your SCSS
+- Run `grunt serve` does the same as the above but also serve your files to a local server
+- Run `grunt dist` to compile and minify your CSS and JS
 
 
 ## License
