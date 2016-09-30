@@ -4,6 +4,7 @@
 * Check if we can update it easily and still customise the setup
 * Sass loader + img loader
 * Bootstrap v4 as NPM dependency: try to import only the grid without hardcoding the project in the Sass files (to upgrade easily)
+* Implement https://github.com/luisrudge/postcss-flexbugs-fixes
 * Optional: integrate React Hot Loader (v3) https://github.com/gaearon/react-hot-loader 
 
 ## Features
