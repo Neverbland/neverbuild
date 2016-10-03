@@ -6,6 +6,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 var WatchMissingNodeModulesPlugin = require('../scripts/utils/WatchMissingNodeModulesPlugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 var paths = require('./paths');
 var env = require('./env');
 
@@ -182,6 +183,12 @@ module.exports = {
       inject: true,
       template: paths.appHtml,
     }),
+
+    new CopyWebpackPlugin([
+        { from: 'src/images', to: 'images' },
+        { from: 'src/fonts', to: 'fonts' },
+        { from: 'src/manifest.json', to: 'manifest.json' }
+    ]),
     // Makes some environment variables available to the JS code, for example:
     // if (process.env.NODE_ENV === 'development') { ... }. See `env.js`.
     new webpack.DefinePlugin(env),
