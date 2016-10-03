@@ -5,7 +5,6 @@ class Home extends Component {
     return (
       <div>
         <p>Home</p>
-        <img src='../../images/img.jpg' alt='lol' />
       </div>
     )
   }
