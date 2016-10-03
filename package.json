@@ -61,6 +61,7 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
+    "bootstrap": "github:twbs/bootstrap#v4-dev",
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
   },
