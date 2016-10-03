@@ -1,0 +1,63 @@
+/**
+ * Custom Z-indexes
+ */
+$z-fixed: 5;
+$z-main: 10;
+$z-header: 15;
+
+/**
+ * Base styles
+ */
+html {
+  box-sizing: border-box;
+  font-family: $base-font;
+  font-size: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: $background-colour;
+  color: $colour;
+  position: relative;
+}
+
+
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+&::selection {
+  background: $selection-colour;
+  text-shadow: none;
+}
+
+.no-list-style,
+%no-list-style {
+  list-style: none;
+}
+
+ul {
+  &.no-list-style {
+    @extend %no-list-style;
+  }
+}
+
+/* Misc ---------------------- */
+.hide,
+%hide {
+  display: none;
+}
+
+// When we want the last column to fill in the remainder of the row
+.fill-remainder,
+%fill-remainder {
+  float: none;
+  overflow: hidden;
+}
