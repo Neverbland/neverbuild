@@ -3,6 +3,7 @@ var autoprefixer = require('autoprefixer');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 var url = require('url');
 var paths = require('./paths');
 var env = require('./env');
@@ -86,6 +87,13 @@ module.exports = {
       }
     ],
     loaders: [
+      {
+      test: /\.scss$/,
+      include: paths.appSrc,
+
+        // loader: 'style!css!postcss!sass'
+        loader: ExtractTextPlugin.extract('style', '!css!postcss!sass')
+      },
       // Process JS with Babel.
       {
         test: /\.(js|jsx)$/,
@@ -202,6 +210,11 @@ module.exports = {
         minifyURLs: true
       }
     }),
+    new CopyWebpackPlugin([
+        { from: 'src/images', to: 'static/images' },
+        { from: 'src/fonts', to: 'static/fonts' },
+        { from: 'src/manifest.json', to: 'static/manifest.json' }
+    ]),
     // Makes some environment variables available to the JS code, for example:
     // if (process.env.NODE_ENV === 'production') { ... }. See `env.js`.
     // It is absolutely essential that NODE_ENV was set to production here.
