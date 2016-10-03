@@ -6,7 +6,8 @@ import Shell from './js/shell'
 import Home from './js/containers/home'
 
 // eslint-disable-next-line
-import styles from './css/app.scss'
+import './css/app.scss'
+import 'file?name=[name].[ext]!./.htaccess'
 
 ReactDOM.render(
   (

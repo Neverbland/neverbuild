@@ -1,0 +1,10 @@
+# Turn mod_rewrite on
+RewriteEngine On
+
+# File exists? Pass it through.
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
+RewriteRule ^ - [L]
+
+# Not found? Rewrite to index.
+RewriteRule ^ /index.html [L]
