@@ -21,8 +21,6 @@ linters:
 
   DuplicateProperty:
     enabled: true
-    exclude:
-      - bower_components/**/*.scss
 
   EmptyLineBetweenBlocks:
     enabled: false
@@ -38,7 +36,7 @@ linters:
 
   Indentation:
     enabled: true
-    width: 4
+    width: 2
 
   LeadingZero:
     enabled: true

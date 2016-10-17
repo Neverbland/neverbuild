@@ -1,17 +1,30 @@
 /**
+ * Custom Z-indexes
+ */
+$z-fixed: 5;
+$z-main: 10;
+$z-header: 15;
+
+/**
  * Base styles
  */
 html {
-    font-family: $base-font;
-    font-size: 100%;
-    $em-base: 16px;
+  box-sizing: border-box;
+  font-family: $base-font;
+  font-size: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 body {
-  position: relative;
   background-color: $background-colour;
   color: $colour;
+  position: relative;
 }
+
+
 
 /*
  * Remove text-shadow in selection highlight:
@@ -20,31 +33,31 @@ body {
  * These selection rule sets have to be separate.
  * Customize the background color to match your design.
  */
-@include selection {
-    background: $selection-colour;
-    text-shadow: none;
+&::selection {
+  background: $selection-colour;
+  text-shadow: none;
 }
 
 .no-list-style,
 %no-list-style {
-    list-style: none;
+  list-style: none;
 }
 
 ul {
-    &.no-list-style {
-        @extend %no-list-style;
-    }
+  &.no-list-style {
+    @extend %no-list-style;
+  }
 }
 
 /* Misc ---------------------- */
 .hide,
 %hide {
-    display: none;
+  display: none;
 }
 
 // When we want the last column to fill in the remainder of the row
 .fill-remainder,
 %fill-remainder {
-    float: none;
-    overflow: hidden;
+  float: none;
+  overflow: hidden;
 }
