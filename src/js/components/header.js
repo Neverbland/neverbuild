@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Icon from './icon';
+
+import logo from '../../images/sprite/logo.svg';
 
 const Header = () => (
   <header>
-    <h2>Header</h2>
+    <Icon glyph={logo} />
   </header>
-)
+);
 
-export default Header
+export default Header;

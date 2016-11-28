@@ -87,13 +87,6 @@ module.exports = {
       }
     ],
     loaders: [
-      {
-      test: /\.scss$/,
-      include: paths.appSrc,
-
-        // loader: 'style!css!postcss!sass'
-        loader: ExtractTextPlugin.extract('style', '!css!postcss!sass')
-      },
       // Process JS with Babel.
       {
         test: /\.(js|jsx)$/,
@@ -114,7 +107,7 @@ module.exports = {
       // use the "style" loader inside the async code so CSS from them won't be
       // in the main CSS file.
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         // "?-autoprefixer" disables autoprefixer in css-loader itself:
         // https://github.com/webpack/css-loader/issues/281
         // We already have it thanks to postcss. We only pass this flag in
@@ -123,7 +116,7 @@ module.exports = {
         // Webpack 1.x uses Uglify plugin as a signal to minify *all* the assets
         // including CSS. This is confusing and will be removed in Webpack 2:
         // https://github.com/webpack/webpack/issues/283
-        loader: ExtractTextPlugin.extract('style', 'css?-autoprefixer!postcss')
+        loader: ExtractTextPlugin.extract('style', 'css?-autoprefixer!postcss!sass')
         // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify
@@ -136,20 +129,11 @@ module.exports = {
       // When you `import` an asset, you get its filename.
       {
         test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
-        exclude: /\/favicon.ico$/,
-        loader: 'file',
-        query: {
-          name: 'static/media/[name].[hash:8].[ext]'
-        }
-      },
-      // A special case for favicon.ico to place it into build root directory.
-      {
-        test: /\/favicon.ico$/,
-        include: [paths.appSrc],
-        loader: 'file',
-        query: {
-          name: 'favicon.ico?[hash:8]'
-        }
+        exclude: [paths.appSprite],
+        loaders: [
+          'file?hash=sha512&digest=hex&name=[name].[hash:8].[ext]',
+          'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+        ]
       },
       // "url" loader works just like "file" loader but it also embeds
       // assets smaller than specified size as data URLs to avoid requests.
@@ -161,14 +145,13 @@ module.exports = {
           name: 'static/media/[name].[hash:8].[ext]'
         }
       },
-      // "html" loader is used to process template page (index.html) to resolve
-      // resources linked with <link href="./relative/path"> HTML tags.
       {
-        test: /\.html$/,
-        loader: 'html',
-        query: {
-          attrs: ['link:href'],
-        }
+        test: /\.svg$/,
+        include: [paths.appSprite],
+        loader: 'svg-sprite?' + JSON.stringify({
+          name: '[name]_[hash]',
+          prefixize: true
+        }) + '!svgo'
       }
     ]
   },
