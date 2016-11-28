@@ -1,4 +1,4 @@
-# Neverbuild V2
+# Neverbuild
 
 Kickstarts a new React app
 
@@ -14,6 +14,16 @@ Kickstarts a new React app
 - Install: `npm install`
 - Start dev: `npm start`
 - Production build: `npm run build`
+
+## Writing CSS
+
+We use [BEM](https://en.bem.info/) across our projects.
+
+## Recommended Tools
+
+- ESLint ([Atom Plugin](https://atom.io/packages/linter-eslint)/[Sublime Plugin](https://github.com/roadhump/SublimeLinter-eslint))
+- SASS Lint ([Atom Plugin](https://atom.io/packages/linter-sass-lint)/[Sublime Plugin](https://github.com/skovhus/SublimeLinter-contrib-sass-lint))
+- Beautifier ([Atom Plugin](https://atom.io/packages/atom-beautify))
 
 ## License
 
