@@ -10,8 +10,6 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 var paths = require('./paths');
 var env = require('./env');
 
-var contentful = require('contentful');
-
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
 // The production configuration is different and lives in a separate file.
