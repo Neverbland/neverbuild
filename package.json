@@ -60,6 +60,7 @@
   "dependencies": {
     "bootstrap": "github:twbs/bootstrap#v4-dev",
     "core-js": "^2.4.1",
+    "normalize.css": "^5.0.0",
     "postcss-flexbugs-fixes": "^2.0.0",
     "postcss-loader": "0.13.0",
     "promise": "7.1.1",
