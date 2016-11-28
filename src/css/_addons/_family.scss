@@ -13,7 +13,7 @@
 // @content [Write the style you want to apply to the children, and it will be added within the @content directive]
 // @param {number} $num - id of the child
 @mixin last($num) {
-   &:nth-last-child(-n + #{$num}) {
+  &:nth-last-child(-n + #{$num}) {
     @content;
   }
 }
@@ -34,7 +34,7 @@
 // @param {number} $num - id of the child
 @mixin from-end($num) {
   &:nth-last-child(#{$num}) {
-   @content;
+    @content;
   }
 }
 
@@ -73,7 +73,6 @@
     @content;
   }
 }
-
 
 // Select all children but `$num`.
 // @group with-arguments
@@ -117,18 +116,16 @@
   }
 }
 
-
 // Select the item in the middle of `$num` child. Only works with odd number
 // chain.
 // @group with-arguments
 // @content [Write the style you want to apply to the children, and it will be added within the @content directive]
 // @param {number} $num - id of the child
 @mixin middle($num) {
-  &:nth-child(#{round($num / 2)}){
+  &:nth-child(#{round($num / 2)}) {
     @content;
   }
 }
-
 
 // Select all children between the `$num` first and the `$num` last.
 // @group with-arguments
@@ -140,7 +137,6 @@
   }
 }
 
-
 // This I/O mixin will only select the first of `$limit` items. It will not
 // work if there is not as much as item as you set in `$limit`.
 // @group io
@@ -148,7 +144,7 @@
 // @content [Write the style you want to apply to the children, and it will be added within the @content directive]
 @mixin first-of($limit) {
   &:nth-last-child(#{$limit}):first-child {
-   @content;
+    @content;
   }
 }
 
@@ -229,7 +225,6 @@
     @content;
   }
 }
-
 
 // This mixin is used to automatically sort z-index in numerical order. But it
 // can also sort them in anti-numerical order, depending the parameters you use.
