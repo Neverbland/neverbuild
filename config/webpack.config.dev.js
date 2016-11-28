@@ -83,20 +83,13 @@ module.exports = {
     // First, run the linter.
     // It's important to do this before Babel processes the JS.
     preLoaders: [
-    {
-      test: /\.(js|jsx)$/,
-      loader: 'eslint',
-      include: paths.appSrc,
-    }
+      {
+        test: /\.(js|jsx)$/,
+        loader: 'eslint',
+        include: paths.appSrc,
+      }
     ],
     loaders: [
-    {
-      test: /\.scss$/,
-      include: paths.appSrc,
-
-        // loader: 'style!css!postcss!sass'
-        loader: ExtractTextPlugin.extract('style', '!css!postcss!sass')
-      },
       // Process JS with Babel.
       {
         test: /\.(js|jsx)$/,
@@ -104,7 +97,16 @@ module.exports = {
         loader: 'babel',
         query: require('./babel.dev')
       },
+      // "postcss" loader applies autoprefixer to our CSS.
+      // "css" loader resolves paths in CSS and adds assets as dependencies.
+      // "style" loader turns CSS into JS modules that inject <style> tags.
+      // In production, we use a plugin to extract that CSS to a file, but
+      // in development "style" loader enables hot editing of CSS.
+      {
+        test: /\.scss$/,
+        loader: 'style!css?sourceMap!postcss!sass?sourceMap'
 
+      },
       // JSON is not enabled by default in Webpack but both Node and Browserify
       // allow it implicitly so we also enable it.
       {
@@ -116,19 +118,10 @@ module.exports = {
       // In production, they would get copied to the `build` folder.
       {
         test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
-        exclude: /\/favicon.ico$/,
+        exclude: [paths.appSprite],
         loader: 'file',
         query: {
           name: 'static/media/[name].[hash:8].[ext]'
-        }
-      },
-      // A special case for favicon.ico to place it into build root directory.
-      {
-        test: /\/favicon.ico$/,
-        include: [paths.appSrc],
-        loader: 'file',
-        query: {
-          name: 'favicon.ico?[hash:8]'
         }
       },
       // "url" loader works just like "file" loader but it also embeds
@@ -141,17 +134,16 @@ module.exports = {
           name: 'static/media/[name].[hash:8].[ext]'
         }
       },
-      // "html" loader is used to process template page (index.html) to resolve
-      // resources linked with <link href="./relative/path"> HTML tags.
       {
-        test: /\.html$/,
-        loader: 'html',
-        query: {
-          attrs: ['link:href'],
-        }
+        test: /\.svg$/,
+        include: [paths.appSprite],
+        loader: 'svg-sprite?' + JSON.stringify({
+          name: '[name]_[hash]',
+          prefixize: true
+        }) + '!svgo'
       }
-      ]
-    },
+    ]
+  },
   // Point ESLint to our predefined config.
   eslint: {
     configFile: path.join(__dirname, 'eslint.js'),
