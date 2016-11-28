@@ -1,8 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-import Header from './components/header'
+import Header from '../components/header';
 
 class Shell extends Component {
+  componentWillMount() {
+    // Code goes here...
+  }
   render() {
     return (
       <div className="shell">
@@ -13,5 +16,4 @@ class Shell extends Component {
   }
 }
 
-export default Shell
-
+export default Shell;
