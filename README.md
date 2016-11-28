@@ -15,6 +15,10 @@ Kickstarts a new React app
 - Start dev: `npm start`
 - Production build: `npm run build`
 
+## Testing
+
+- Lint SCSS: `npm run lint:scss`
+
 ## Writing CSS
 
 We use [BEM](https://en.bem.info/) across our projects.
