@@ -1,20 +1,12 @@
-/**
- * Custom Z-indexes
- */
-$z-fixed: 5;
-$z-main: 10;
-$z-header: 15;
-
-/**
- * Base styles
- */
 html {
   box-sizing: border-box;
   font-family: $base-font;
   font-size: 100%;
 }
 
-*, *:before, *:after {
+*,
+*:after,
+*:before {
   box-sizing: inherit;
 }
 
@@ -23,8 +15,6 @@ body {
   color: $colour;
   position: relative;
 }
-
-
 
 /*
  * Remove text-shadow in selection highlight:
@@ -38,8 +28,8 @@ body {
   text-shadow: none;
 }
 
-.no-list-style,
-%no-list-style {
+%no-list-style,
+.no-list-style {
   list-style: none;
 }
 
@@ -50,14 +40,7 @@ ul {
 }
 
 /* Misc ---------------------- */
-.hide,
-%hide {
+%hide,
+.hide {
   display: none;
-}
-
-// When we want the last column to fill in the remainder of the row
-.fill-remainder,
-%fill-remainder {
-  float: none;
-  overflow: hidden;
 }
