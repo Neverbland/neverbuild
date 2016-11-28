@@ -1,34 +1,26 @@
-/**
- * Base ~ Type
- */
-
-/**
- * Type variables
- */
+// Type variables
 $base-font: sans-serif !default;
 $alt-font: sans-serif !default;
 
-/**
- * Type styles
- */
-h1,
-.h1,
+// Type styles
 %h1,
-h2,
-.h2,
 %h2,
-h3,
-.h3,
 %h3,
-h4,
-.h4,
 %h4,
-h5,
-.h5,
 %h5,
-h6,
+%h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
 .h6,
-%h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 14px 0;
   font-family: $alt-font;
   font-style: normal;
@@ -36,44 +28,44 @@ h6,
   text-rendering: optimizeLegibility;
 }
 
-h1,
+%h1,
 .h1,
-%h1 {
+h1 {
   font-size: rem(44);
   line-height: 48.4px;
 }
 
-h2,
+%h2,
 .h2,
-%h2 {
+h2 {
   font-size: rem(37);
   line-height: 40.7px;
 }
 
-h3,
+%h3,
 .h3,
-%h3 {
+h3 {
   font-size: rem(27);
   line-height: 29.7px;
 }
 
-h4,
+%h4,
 .h4,
-%h4 {
+h4 {
   font-size: rem(23);
   line-height: 25.3px;
 }
 
-h5,
+%h5,
 .h5,
-%h5 {
+h5 {
   font-size: rem(17);
   line-height: 18.7px;
 }
 
-h6,
+%h6,
 .h6,
-%h6 {
+h6 {
   font-size: rem(14);
   line-height: 15.8px;
 }
@@ -103,8 +95,8 @@ i {
   line-height: inherit;
 }
 
-strong,
-b {
+b,
+strong {
   font-weight: bold;
   line-height: inherit;
 }

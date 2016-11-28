@@ -1,19 +1,8 @@
-/**
- * Base styles ~ Forms
- */
 %disabled-state {
   cursor: not-allowed;
 }
 
-html {
-  input[disabled] {
-    @extend %disabled-state;
-  }
-}
-
-/*
- * Allow only vertical resizing of textareas.
- */
+// Allow only vertical resizing of textareas.
 textarea {
   resize: vertical;
 }
