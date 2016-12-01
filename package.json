@@ -1,8 +1,8 @@
 {
-  "name": "feast-it",
-  "version": "0.2.0",
+  "name": "neverbuild",
+  "version": "0.2.1",
   "private": true,
-  "homepage": "https://www.feast-it.com",
+  "homepage": "https://github.com/Neverbland/generator-neverbuild",
   "devDependencies": {
     "autoprefixer": "6.4.1",
     "babel-core": "6.14.0",
