@@ -2,12 +2,23 @@ var path = require('path');
 var autoprefixer = require('autoprefixer');
 var postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
 var webpack = require('webpack');
+var findCacheDir = require('find-cache-dir');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
-var WatchMissingNodeModulesPlugin = require('../scripts/utils/WatchMissingNodeModulesPlugin');
+var InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
+var WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
+var getClientEnvironment = require('./env');
 var paths = require('./paths');
-var env = require('./env');
+
+// Webpack uses `publicPath` to determine where the app is being served from.
+// In development, we always serve from the root. This makes config easier.
+var publicPath = 'http://localhost:3000/';
+// `publicUrl` is just like `publicPath`, but we will provide it to our app
+// as %PUBLIC_URL% in `index.html` and `process.env.PUBLIC_URL` in JavaScript.
+// Omit trailing shlash as %PUBLIC_PATH%/xyz looks better than %PUBLIC_PATH%xyz.
+var publicUrl = '';
+// Get enrivonment variables to inject into our app.
+var env = getClientEnvironment(publicUrl);
 
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
@@ -22,30 +33,28 @@ module.exports = {
   // This means they will be the "root" imports that are included in JS bundle.
   // The first two entry points enable "hot" CSS and auto-refreshes for JS.
   entry: [
-    // Include WebpackDevServer client. It connects to WebpackDevServer via
-    // sockets and waits for recompile notifications. When WebpackDevServer
-    // recompiles, it sends a message to the client by socket. If only CSS
-    // was changed, the app reload just the CSS. Otherwise, it will refresh.
-    // The "?/" bit at the end tells the client to look for the socket at
-    // the root path, i.e. /sockjs-node/. Otherwise visiting a client-side
-    // route like /todos/42 would make it wrongly request /todos/42/sockjs-node.
-    // The socket server is a part of WebpackDevServer which we are using.
-    // The /sockjs-node/ path I'm referring to is hardcoded in WebpackDevServer.
-    require.resolve('webpack-dev-server/client') + '?/',
-    // Include Webpack hot module replacement runtime. Webpack is pretty
-    // low-level so we need to put all the pieces together. The runtime listens
-    // to the events received by the client above, and applies updates (such as
-    // new CSS) to the running application.
+    // Include an alternative client for WebpackDevServer. A client's job is to
+    // connect to WebpackDevServer by a socket and get notified about changes.
+    // When you save a file, the client will either apply hot updates (in case
+    // of CSS changes), or refresh the page (in case of JS changes). When you
+    // make a syntax error, this client will display a syntax error overlay.
+    // Note: instead of the default WebpackDevServer client, we use a custom one
+    // to bring better experience for Create React App users. You can replace
+    // the line below with these two lines if you prefer the stock client:
+    // require.resolve('webpack-dev-server/client') + '?/',
     require.resolve('webpack/hot/dev-server'),
-    // We ship a few polyfills by default.
+    // require.resolve('react-dev-utils/webpackHotDevClient'),
+    // Hot loader
+    require.resolve('react-hot-loader/patch'),
+    // We ship a few polyfills by default:
     require.resolve('./polyfills'),
     // Finally, this is your app's code:
     paths.appIndexJs
     // We include the app code last so that if there is a runtime error during
     // initialization, it doesn't blow up the WebpackDevServer client, and
     // changing JS code would still trigger a refresh.
-    ],
-    output: {
+  ],
+  output: {
     // Next line is not used in dev but WebpackDevServer crashes without it:
     path: paths.appBuild,
     // Add /* filename */ comments to generated require()s in the output.
@@ -53,9 +62,9 @@ module.exports = {
     // This does not produce a real file. It's just the virtual path that is
     // served by WebpackDevServer in development. This is the JS bundle
     // containing code from all our entry points, and the Webpack runtime.
-    filename: 'static/js/bundle.js',
-    // In development, we always serve from the root. This makes config easier.
-    publicPath: '/'
+    filename: 'js/bundle.js',
+    // This is the URL that app is served from. We use "/" in development.
+    publicPath: publicPath
   },
   resolve: {
     // This allows you to set a fallback for where Webpack should look for modules.
@@ -75,9 +84,7 @@ module.exports = {
       'react-native': 'react-native-web'
     }
   },
-  // Resolve loaders (webpack plugins for CSS, images, transpilation) from the
-  // directory of `react-scripts` itself rather than the project directory.
-  // You can remove this after ejecting.
+
   module: {
     // First, run the linter.
     // It's important to do this before Babel processes the JS.
@@ -120,7 +127,7 @@ module.exports = {
         exclude: [paths.appSprite],
         loader: 'file',
         query: {
-          name: 'static/media/[name].[hash:8].[ext]'
+          name: 'media/[name].[hash:8].[ext]'
         }
       },
       // "url" loader works just like "file" loader but it also embeds
@@ -130,7 +137,7 @@ module.exports = {
         loader: 'url',
         query: {
           limit: 10000,
-          name: 'static/media/[name].[hash:8].[ext]'
+          name: 'media/[name].[hash:8].[ext]'
         }
       },
       {
@@ -143,38 +150,35 @@ module.exports = {
       }
     ]
   },
-  // Point ESLint to our predefined config.
-  eslint: {
-    configFile: path.join(__dirname, 'eslint.js'),
-    useEslintrc: false
-  },
+
   // We use PostCSS for autoprefixing only.
   postcss: function() {
     return [
-    autoprefixer({
-      browsers: [
-      '>1%',
-      'last 4 versions',
-      'Firefox ESR',
-        'not ie < 9', // React doesn't support IE8 anyway
-      ]
-    }),
-    postcssFlexbugsFixes
+      autoprefixer({
+        browsers: [
+          '>1%',
+          'last 4 versions',
+          'Firefox ESR',
+          'not ie < 9', // React doesn't support IE8 anyway
+        ]
+      }),
+      postcssFlexbugsFixes
     ];
   },
   plugins: [
-    new ExtractTextPlugin('app-[hash].css', {
-      allChunks: true
+    // Makes the public URL available as %PUBLIC_URL% in index.html, e.g.:
+    // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    // In development, this will be an empty string.
+    new InterpolateHtmlPlugin({
+      PUBLIC_URL: publicUrl
     }),
-
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
       inject: true,
       template: paths.appHtml,
     }),
-
     // Makes some environment variables available to the JS code, for example:
-    // if (process.env.NODE_ENV === 'development') { ... }. See `env.js`.
+    // if (process.env.NODE_ENV === 'development') { ... }. See `./env.js`.
     new webpack.DefinePlugin(env),
     // This is necessary to emit hot updates (currently CSS only):
     new webpack.HotModuleReplacementPlugin(),
@@ -187,7 +191,7 @@ module.exports = {
     // makes the discovery automatic so you don't have to restart.
     // See https://github.com/facebookincubator/create-react-app/issues/186
     new WatchMissingNodeModulesPlugin(paths.appNodeModules)
-    ],
+  ],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
   node: {
