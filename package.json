@@ -100,5 +100,6 @@
   },
   "eslintConfig": {
     "extends": "./config/eslint.js"
-  }
+  },
+  "sasslintConfig": "./config/sasslint.yml"
 }
