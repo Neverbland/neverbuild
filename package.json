@@ -61,7 +61,7 @@
     "svgo-loader": "^1.1.2",
     "url-loader": "0.5.7",
     "webpack-dev-server": "1.16.1",
-    "webpack": "1.13.2"
+    "webpack": "1.14.0"
   },
   "dependencies": {
     "bootstrap": "github:twbs/bootstrap#v4-dev",
