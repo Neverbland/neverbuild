@@ -12,7 +12,7 @@ var paths = require('./paths');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
-var publicPath = 'http://localhost:3000/';
+var publicPath = '/';
 // `publicUrl` is just like `publicPath`, but we will provide it to our app
 // as %PUBLIC_URL% in `index.html` and `process.env.PUBLIC_URL` in JavaScript.
 // Omit trailing shlash as %PUBLIC_PATH%/xyz looks better than %PUBLIC_PATH%xyz.
@@ -106,11 +106,14 @@ module.exports = {
       // "postcss" loader applies autoprefixer to our CSS.
       // "css" loader resolves paths in CSS and adds assets as dependencies.
       // "style" loader turns CSS into JS modules that inject <style> tags.
+      // "?fixUrls" comes from a fork of style-loader to fix urls not working
+      // with sourcemap enabled:
+      // https://github.com/imperodesign/generator-impero/issues/27#issuecomment-249153816
       // In production, we use a plugin to extract that CSS to a file, but
       // in development "style" loader enables hot editing of CSS.
       {
         test: /\.scss$/,
-        loader: 'style!css?sourceMap!postcss!sass?sourceMap'
+        loader: 'style?fixUrls!css?sourceMap!postcss!sass?sourceMap'
 
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify

@@ -55,7 +55,7 @@
     "sass-lint": "^1.9.1",
     "sass-loader": "^4.0.2",
     "strip-ansi": "3.0.1",
-    "style-loader": "0.13.1",
+    "style-loader": "github:bendytree/style-loader",
     "svg-sprite-loader": "0.0.28",
     "svgo": "^0.7.0",
     "svgo-loader": "^1.1.2",
