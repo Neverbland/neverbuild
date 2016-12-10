@@ -1,0 +1,70 @@
+# Build stages
+stages:
+  - build
+  - image
+  - deploy
+
+# Build the application
+App:
+  stage: build
+  tags: [ docker ]
+  image: neverbland/neverbuild
+  script: |
+    npm run build
+
+# Build the image
+Image:
+  stage: image
+  tags: [ dockerception ]
+  image: neverbland/nbcloud
+  script: |
+    docker build -t ${IMAGE_NAMESPACE}/${IMAGE_NAME:?}:${IMAGE_VERSION:?} .
+    docker push ${IMAGE_NAMESPACE}/${IMAGE_NAME:?}:${IMAGE_VERSION:?}
+
+# Deployments
+.deploy: &deploy_template
+  stage: deploy
+  tags: [ dockerception ]
+  image: neverbland/nbcloud
+
+Staging:
+  <<: *deploy_template
+  variables:
+    ENV_PREFIX: STAGING_
+  environment:
+    name: Staging
+    on_stop: destroy_staging
+  only: [ branches ]
+  except: [ master ]
+  script: nbcloud deploy "${IMAGE_NAME}-${IMAGE_VERSION}" ci/deploy/staging.yml
+
+Production:
+  <<: *deploy_template
+  variables:
+    ENV_PREFIX: STAGING_
+  environment:
+    name: Production
+    on_stop: destroy_production
+  only: [ tags ]
+  script: nbcloud deploy "${IMAGE_NAME}" ci/deploy/production.yml
+
+# This destroys a stack.
+.destroy: &destroy_template
+  stage: deploy
+  tags: [ dockerception ]
+  image: neverbland/nbcloud
+  when: manual
+
+destroy_staging:
+  <<: *destroy_template
+  environment:
+    name: Staging
+    action: stop
+  script: nbcloud destroy ci/deploy/staging.yml
+
+destroy_staging:
+  <<: *destroy_template
+  environment:
+    name: Production
+    action: stop
+  script: nbcloud destroy ci/deploy/production.yml

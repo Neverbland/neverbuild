@@ -1,0 +1,20 @@
+stages:
+  - build
+  - deploy
+
+Image:
+  stage: build
+  tags: [ dockerception ]
+  image: neverbland/nbcloud
+  only:
+    - master
+  script: |
+    docker build -t neverbland/neverbuild .
+
+Push:
+  stage: deploy
+  tags: [ dockerception ]
+  image: neverbland/nbcloud
+  only: [ master ]
+  script: |
+    docker push neverbland/neverbuild
