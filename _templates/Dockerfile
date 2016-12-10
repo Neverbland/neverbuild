@@ -1,4 +1,6 @@
-FROM neverbland/neverbuild
+FROM nginx:mainline-alpine
 MAINTAINER Neverbland <ops@neverbland.com>
+CMD ["nginx"]
 
-RUN npm install && npm run build
+ADD ci/build/nginx.conf /etc/nginx/nginx.conf
+ADD ./build /app

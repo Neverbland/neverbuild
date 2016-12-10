@@ -77,7 +77,8 @@
     "test": "jest --watch --env=jsdom",
     "lint:js": "eslint src/js/**/*.js",
     "lint:scss": "sass-lint 'src/css/**/*.scss' -v -q",
-    "svg:pretty": "find src/images -name '*.svg' -type f -exec svgo --pretty --indent=2 '{}' \\;"
+    "svg:pretty": "find src/images -name '*.svg' -type f -exec svgo --pretty --indent=2 '{}' \\;",
+    "build:docker": "docker run --rm -t -i -w /app -v $(pwd):/app neverbland/neverbuild sh -c 'npm install && NODE_ENV=production npm run build'"
   },
   "jest": {
     "moduleFileExtensions": [

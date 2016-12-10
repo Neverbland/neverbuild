@@ -3,9 +3,7 @@
 FROM mhart/alpine-node:6
 MAINTAINER Neverbland <ops@neverbland.com>
 
-ENV NODE_ENV=production
-
-RUN apk --update add \
+RUN apk --no-cache add \
       build-base \
       make gcc g++ nasm \
       automake autoconf pkgconfig \
@@ -16,7 +14,5 @@ RUN apk --update add \
       ca-certificates \
       file python curl git \
       grep tar bash docker \
-      nginx \
-    && mkdir -p /var/www/app \
     && rm -fr /var/cache/apk/* \
     && rm -fr /tmp/*

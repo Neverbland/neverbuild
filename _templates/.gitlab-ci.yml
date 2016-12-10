@@ -9,8 +9,17 @@ App:
   stage: build
   tags: [ docker ]
   image: neverbland/neverbuild
+  variables:
+    APP_PUBLIC_PATH: "/"
+  cache:
+    paths:
+      - node_modules/
+  artifacts:
+    paths:
+      - build/
   script: |
-    npm run build
+    npm install
+    NODE_ENV=production npm run build
 
 # Build the image
 Image:
@@ -36,7 +45,7 @@ Staging:
     on_stop: destroy_staging
   only: [ branches ]
   except: [ master ]
-  script: nbcloud deploy "${IMAGE_NAME}-${IMAGE_VERSION}" ci/deploy/staging.yml
+  script: nbcloud deploy "${IMAGE_NAME}-${IMAGE_VERSION}" ci/deploy/docker-cloud.yml app
 
 Production:
   <<: *deploy_template
@@ -46,7 +55,7 @@ Production:
     name: Production
     on_stop: destroy_production
   only: [ tags ]
-  script: nbcloud deploy "${IMAGE_NAME}" ci/deploy/production.yml
+  script: nbcloud deploy "${IMAGE_NAME}" ci/deploy/docker-cloud.yml app
 
 # This destroys a stack.
 .destroy: &destroy_template
@@ -60,11 +69,11 @@ destroy_staging:
   environment:
     name: Staging
     action: stop
-  script: nbcloud destroy ci/deploy/staging.yml
+  script: nbcloud destroy "${IMAGE_NAME}-${IMAGE_VERSION}"
 
-destroy_staging:
+destroy_production:
   <<: *destroy_template
   environment:
     name: Production
     action: stop
-  script: nbcloud destroy ci/deploy/production.yml
+  script: nbcloud destroy "${IMAGE_NAME}"

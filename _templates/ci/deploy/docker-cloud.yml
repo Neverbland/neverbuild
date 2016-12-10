@@ -1,0 +1,5 @@
+# See https://docs.docker.com/docker-cloud/apps/stack-yaml-reference/
+app:
+  image: ${IMAGE_NAMESPACE}/${IMAGE_NAME}:${IMAGE_VERSION}
+  autoredeploy: false
+  expose: [ "80" ]
