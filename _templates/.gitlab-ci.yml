@@ -45,7 +45,9 @@ Staging:
     on_stop: destroy_staging
   only: [ branches ]
   except: [ master ]
-  script: nbcloud deploy "${IMAGE_NAME}-${IMAGE_VERSION}" ci/deploy/docker-cloud.yml app
+  script: |
+    nbcloud deploy "${IMAGE_NAME}-${IMAGE_VERSION}" ci/deploy/docker-cloud.yml app
+    echo "Deployed to http://app.${IMAGE_NAME}-${IMAGE_VERSION}.nbcloud.io"
 
 Production:
   <<: *deploy_template
@@ -55,7 +57,9 @@ Production:
     name: Production
     on_stop: destroy_production
   only: [ tags ]
-  script: nbcloud deploy "${IMAGE_NAME}" ci/deploy/docker-cloud.yml app
+  script: |
+    nbcloud deploy "${IMAGE_NAME}" ci/deploy/docker-cloud.yml app
+    echo "Deployed to http://app.${IMAGE_NAME}.nbcloud.io"
 
 # This destroys a stack.
 .destroy: &destroy_template
