@@ -9,6 +9,17 @@ Kickstarts a new React app
 * Webpack
 * SCSS
 
+## Setting up a new project
+
+```bash
+export PROJECT=project-name
+
+git clone <repository URL> ~/path/to/${PROJECT}
+cd ~/path/to/${PROJECT}
+
+node scripts/install.js <${PROJECT}
+```
+
 ## Getting started
 
 - Install: `npm install`

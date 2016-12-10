@@ -64,7 +64,7 @@ console.log(`${info} Project ${highlight} is set up and ready to go.`, projectNa
 console.log(`${info} You can run "${highlight}" to get it running now.`, 'npm install && npm start');
 console.log(``);
 console.log(`${info} You'll want to add the Gitlab remote: ${highlight}`, 'git remote add origin <SSH URL as given on Gitlab>');
-console.log(`${info} Before pushing to Gitlab, make sure to set the following variables:`);
+console.log(`${info} Before pushing to Gitlab, make sure to set the following variables if you need to customise them:`);
 console.log(`${info} - ${highlight} (either the shared CI user or your own)`, 'DOCKERCLOUD_USER');
 console.log(`${info} - ${highlight} (either the shared CI API key or your own)`, 'DOCKERCLOUD_APIKEY');
 console.log(`${info} - ${highlight} (usually ${highlight})`, 'DOCKERCLOUD_NAMESPACE', 'neverbland');
