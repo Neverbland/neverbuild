@@ -15,7 +15,10 @@ Kickstarts a new React app
 - Start dev: `npm start`
 - Production build: `npm run build`
 
+## Production Server
+
 ## Testing
+Run `npm run build` followed by `node server.js`.
 
 - Lint SCSS: `npm run lint:scss`
 
