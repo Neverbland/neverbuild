@@ -12,12 +12,19 @@
         <!-- Fonts -->
 
         <!-- CSS -->
-        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="build/css/app.css">
     </head>
     <body>
         <div class="main-container"></div>
 
-        <!-- JS -->
+        <!--
+        ** JS **
+        * /_vendors = vendors to load first - like jquery
+        * /vendors  = common vendors
+        * /custom   = your js
+        * those will concatenate into js/app.js while developing
+        -->
+        <script src="build/js/app.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
