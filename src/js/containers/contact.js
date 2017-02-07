@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 
-class Home extends Component {
+class Contact extends Component {
   componentWillMount() {
     // Code goes here...
   }
   render() {
     return (
       <div>
-        <Helmet title="Home" />
-        <h1>Home</h1>
+        <Helmet title="Contact" />
+        <h1>Contact</h1>
       </div>
     );
   }
 }
 
-export default Home;
+export default Contact;
