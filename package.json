@@ -2,6 +2,9 @@
   "name": "neverbuild",
   "version": "0.2.1",
   "private": true,
+  "engines": {
+    "node": ">=4"
+  },
   "devDependencies": {
     "autoprefixer": "6.4.1",
     "babel-core": "6.14.0",
