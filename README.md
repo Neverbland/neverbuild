@@ -23,6 +23,10 @@ Kickstarts a new React app
 
 We use [BEM](https://en.bem.info/) across our projects.
 
+## Polyfills
+
+We use [Polyfill.io](https://polyfill.io/v2/docs/) to polyfill missing Javascript functionality. Simply add any missing functionality by appending the polyfill.io url in `src/public/index.html` with the feature you need.
+
 ## Recommended Tools
 
 - ESLint ([Atom Plugin](https://atom.io/packages/linter-eslint)/[Sublime Plugin](https://github.com/roadhump/SublimeLinter-eslint))
