@@ -46,8 +46,6 @@ module.exports = {
     // require.resolve('react-dev-utils/webpackHotDevClient'),
     // Hot loader
     require.resolve('react-hot-loader/patch'),
-    // We ship a few polyfills by default:
-    require.resolve('./polyfills'),
     // Finally, this is your app's code:
     paths.appIndexJs
     // We include the app code last so that if there is a runtime error during
