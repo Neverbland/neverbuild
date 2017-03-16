@@ -8,6 +8,10 @@ Kickstarts a new React app
 * React Router
 * Webpack
 * SCSS
+* hot reloading (css and React components)
+* SVG sprites
+* Assets optimisation (png, jpg, svg, ...)
+* Automatic polyfilling (using Polyfill.io)
 
 ## Getting started
 
