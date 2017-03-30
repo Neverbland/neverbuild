@@ -32,6 +32,7 @@ module.exports = {
     }
   },
   rules: {
+    'arrow-body-style': [0],
     'arrow-parens': [0],
     'class-methods-use-this': [0],
     'comma-dangle': ['error', 'never'],
@@ -41,7 +42,7 @@ module.exports = {
     'jsx-a11y/no-static-element-interactions': [0],
     'max-len': [0],
     'no-plusplus': [0],
-    'radix': [0],
+    radix: [0],
     'react/forbid-prop-types': [0],
     'react/jsx-filename-extension': [1, {
       extensions: ['.js', '.jsx']
