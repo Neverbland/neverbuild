@@ -46,7 +46,7 @@
     "image-webpack-loader": "^2.0.0",
     "jest": "15.1.1",
     "json-loader": "0.5.4",
-    "node-sass": "^3.7.0",
+    "node-sass": "^4.5.2",
     "path-exists": "2.1.0",
     "postcss-flexbugs-fixes": "^2.0.0",
     "postcss-loader": "0.13.0",
