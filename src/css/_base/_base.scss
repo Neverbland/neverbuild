@@ -16,7 +16,7 @@ body {
   position: relative;
 }
 
-&::selection {
+*::selection {
   background: $selection-colour;
   text-shadow: none;
 }
