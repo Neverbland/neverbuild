@@ -2,7 +2,7 @@
 
 Kickstarts a new React app
 
-###The Webpack configuration sits in [our Create React App fork](https://github.com/Neverbland/create-react-app/tree/master/packages/react-scripts) for easier maintainability.
+### The Webpack configuration sits in [our Create React App fork](https://github.com/Neverbland/create-react-app/tree/master/packages/react-scripts) for easier maintainability.
 This repository is intended to replace the `/template` folder of Create React App.
 
 This package includes scripts and configuration used by [Create React App](https://github.com/facebookincubator/create-react-app).<br>
