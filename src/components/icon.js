@@ -6,7 +6,7 @@ export default function Icon({
 }) {
   return (
     <svg className={className}>
-      <use xlinkHref={glyph} />
+      <use xlinkHref={`#${glyph}`} />
     </svg>
   );
 }
