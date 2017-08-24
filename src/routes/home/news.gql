@@ -1,0 +1,11 @@
+{
+  allNews {
+    id
+    title
+    author {
+      name
+    }
+    link
+    content
+  }
+}
