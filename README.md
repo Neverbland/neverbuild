@@ -1,5 +1,10 @@
 # Neverbuild
 
+### :warning: Warning! Breaking change with SVG Sprite Loader, read this!
+To use an SVG sprite, you should now do like the following:
+https://github.com/Neverbland/neverbuild/blob/master/src/components/header.js#L9
+This is due to a [change on SVG Sprite Loader](https://github.com/kisenka/svg-sprite-loader/blob/master/2.0.md#client-runtime).
+
 Kickstarts a new React app
 
 ### The Webpack configuration sits in [our Create React App fork](https://github.com/Neverbland/create-react-app/tree/master/packages/react-scripts) for easier maintainability.
