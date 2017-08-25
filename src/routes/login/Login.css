@@ -1,4 +1,3 @@
-
 @import '../../components/variables.css';
 
 .root {
@@ -46,7 +45,8 @@
 
 .input:focus {
   border-color: #0074c2;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 116, 194, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 8px rgba(0, 116, 194, 0.6);
 }
 
 .button {

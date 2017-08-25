@@ -147,16 +147,13 @@
       "git add"
     ],
     "*.{gql,graphql}": ["prettier --write --parser graphql", "git add"],
-    "*.{css,less,scss,sss}": ["stylelint --fix", "git add"]
+    "*.{css,less,scss,sss}": ["prettier --write", "git add"]
   },
   "scripts": {
     "precommit": "lint-staged",
-    "lint-js": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" .",
-    "lint-css": "stylelint \"src/**/*.{css,less,scss,sss}\"",
-    "lint": "npm run lint-js && npm run lint-css",
-    "fix-js": "npm run lint-js -- --fix",
-    "fix-css": "npm run lint-css -- --fix",
     "fix": "npm run fix-js && npm run fix-css",
+    "fix-css": "prettier \"src/**/*.{css,less,scss,sss}\" --write",
+    "fix-js": "prettier \"src/**/*.{js,jsx,json}\" --single-quote --trailing-comma all --write",
     "clean": "babel-node tools/run clean",
     "copy": "babel-node tools/run copy",
     "bundle": "babel-node tools/run bundle",
