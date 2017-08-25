@@ -192,10 +192,13 @@ const config = {
           {
             loader: 'svg-sprite-loader',
             options: {
-              extract: true,
+              // Don't extract because IE can't handle SVG spritesheets
+              // We've implemented a workaround by rendering the SVGs
+              //  onto the page.
+              // extract: true,
               // This file is specifically ignored in BannerPlugin
               //  to avoid breaking SVG rendering.
-              spriteFilename: 'sprite.svg',
+              // spriteFilename: 'sprite.svg',
             },
           },
           'svgo-loader',

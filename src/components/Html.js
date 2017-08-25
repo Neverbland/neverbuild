@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import serialize from 'serialize-javascript';
+
 import config from '../config';
 
 /* eslint-disable react/no-danger */
@@ -18,6 +19,7 @@ class Html extends React.Component {
     scripts: PropTypes.arrayOf(PropTypes.string.isRequired),
     app: PropTypes.object, // eslint-disable-line
     children: PropTypes.string.isRequired,
+    svgSprite: PropTypes.string.isRequired,
   };
 
   static defaultProps = {
@@ -26,7 +28,15 @@ class Html extends React.Component {
   };
 
   render() {
-    const { title, description, styles, scripts, app, children } = this.props;
+    const {
+      title,
+      description,
+      styles,
+      scripts,
+      app,
+      children,
+      svgSprite,
+    } = this.props;
     return (
       <html className="no-js" lang="en">
         <head>
@@ -51,6 +61,7 @@ class Html extends React.Component {
           )}
         </head>
         <body>
+          <div id="svgSprite" dangerouslySetInnerHTML={{ __html: svgSprite }} />
           <div id="app" dangerouslySetInnerHTML={{ __html: children }} />
           <script
             dangerouslySetInnerHTML={{ __html: `window.App=${serialize(app)}` }}

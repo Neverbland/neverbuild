@@ -4,6 +4,8 @@ import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import expressJwt, { UnauthorizedError as Jwt401Error } from 'express-jwt';
 // import jwt from 'jsonwebtoken';
+import sprite from 'svg-sprite-loader/runtime/sprite.build';
+
 import fetch from 'node-fetch';
 import React from 'react';
 import ReactDOM from 'react-dom/server';
@@ -99,10 +101,6 @@ app.get('*', async (req, res, next) => {
     const context = {
       // Enables critical path CSS rendering
       // https://github.com/kriasoft/isomorphic-style-loader
-      // insertCss: (...styles) => {
-      //   // eslint-disable-next-line no-underscore-dangle
-      //   styles.forEach(style => css.add(style._getCss()));
-      // },
       insertCss: (...styles) => {
         // eslint-disable-next-line no-underscore-dangle
         styles.forEach(style => style._getCss && css.add(style._getCss()));
@@ -131,6 +129,11 @@ app.get('*', async (req, res, next) => {
         {route.component}
       </App>,
     );
+
+    // SVG Spritesheet
+    // https://github.com/kisenka/svg-sprite-loader/tree/master/examples/server-side-rendering
+    data.svgSprite = sprite.stringify();
+
     data.styles = [{ id: 'css', cssText: [...css].join('') }];
     data.scripts = [assets.vendor.js];
     if (route.chunks) {

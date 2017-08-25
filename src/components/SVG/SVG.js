@@ -20,7 +20,7 @@ class SVG extends React.Component {
     const { className, glyph } = this.props;
     return (
       <svg className={className} viewBox={glyph.viewbox}>
-        <use xlinkHref={`/assets/sprite.svg#${glyph.id}`} />
+        <use xlinkHref={`#${glyph.id}`} />
       </svg>
     );
   }
