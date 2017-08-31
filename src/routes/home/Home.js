@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
+
 import s from './Home.scss';
 
 class Home extends React.Component {
@@ -16,29 +17,23 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div className={s.root}>
-        <div className={s.container}>
-          <h1>React.js News</h1>
-          {this.props.news.map(item =>
-            <article key={item.id} className={s.newsItem}>
-              <h1 className={s.newsTitle}>
-                <a href={item.link}>
-                  {item.title}
-                </a>
-              </h1>
-              <aside>
-                <small>
-                  {item.author.name}
-                </small>
-              </aside>
-              <div
-                className={s.newsDesc}
-                // eslint-disable-next-line react/no-danger
-                dangerouslySetInnerHTML={{ __html: item.content }}
-              />
-            </article>,
-          )}
-        </div>
+      <div className="container">
+        <h1>News!</h1>
+        {this.props.news.map(item => (
+          <article key={item.id} className={s.newsItem}>
+            <h1 className={s.newsTitle}>
+              <a href={item.link}>{item.title}</a>
+            </h1>
+            <aside>
+              <small>{item.author.name}</small>
+            </aside>
+            <div
+              className={s.newsDesc}
+              // eslint-disable-next-line react/no-danger
+              dangerouslySetInnerHTML={{ __html: item.content }}
+            />
+          </article>
+        ))}
       </div>
     );
   }

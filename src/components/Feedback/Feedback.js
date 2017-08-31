@@ -1,12 +1,13 @@
 import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './Feedback.css';
+
+import s from './Feedback.scss';
 
 class Feedback extends React.Component {
   render() {
     return (
-      <div className={s.root}>
-        <div className={s.container}>
+      <div className={s.feedback}>
+        <div className="container">
           <a
             className={s.link}
             href="https://gitter.im/kriasoft/react-starter-kit"

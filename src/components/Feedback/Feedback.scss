@@ -1,16 +1,7 @@
-@import '../variables.css';
-
-.root {
+.feedback {
   background: #f5f5f5;
   color: #333;
-}
-
-.container {
-  margin: 0 auto;
-  padding: 20px 8px;
-  max-width: var(--max-content-width);
-  text-align: center;
-  font-size: 1.5em; /* ~24px */
+  padding: 20px 0;
 }
 
 .link,

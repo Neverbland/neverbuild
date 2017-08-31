@@ -1,0 +1,42 @@
+@import "../../styles/base/colours";
+
+.wrapper {
+  background: $blue-medium;
+  padding: 20px 0 30px;
+}
+
+.brand {
+  margin: 6px 0 0;
+  display: inline-block;
+}
+
+.logo {
+  margin-left: 10px;
+  height: 38px;
+  width: 200px;
+  float: left;
+}
+
+.icon {
+  float: left;
+}
+
+.banner {
+  text-align: center;
+}
+
+.bannerTitle {
+  color: $white;
+  margin: 0;
+  padding: 10px;
+  font-weight: normal;
+  font-size: 4em;
+  line-height: 1em;
+}
+
+.bannerDesc {
+  padding: 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.25em;
+  margin: 0;
+}

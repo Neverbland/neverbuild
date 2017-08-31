@@ -1,0 +1,28 @@
+body {
+  background-color: $background-colour;
+  color: $colour;
+  position: relative;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  height: auto;
+  width: auto;
+}
+
+*::selection {
+  background: $selection-colour;
+  text-shadow: none;
+}
+
+%no-list-style,
+.no-list-style {
+  list-style: none;
+}
+
+ul {
+  &.no-list-style {
+    @extend %no-list-style;
+  }
+}

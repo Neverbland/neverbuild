@@ -1,0 +1,87 @@
+@import "../addons/px-to-rem";
+
+// Type styles
+html {
+  font-family: $base-font;
+}
+
+%h1,
+%h2,
+%h3,
+%h4,
+%h5,
+%h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 14px 0;
+  font-family: $bold-font;
+  font-style: normal;
+  color: $heading-colour;
+  text-rendering: optimizeLegibility;
+  line-height: 1.4;
+
+  // Because +90% of the titles in this design are the same size.
+  font-size: rem(18px);
+
+  @media (min-width: 768px) {
+    font-size: rem(24px);
+  }
+}
+
+a {
+  color: $link-colour;
+  text-decoration: none;
+}
+
+p {
+  margin-bottom: 17px;
+  font-family: inherit;
+  font-weight: normal;
+}
+
+hr {
+  margin: 22px 0 21px;
+  height: 0;
+  border: solid $hr-colour;
+  border-width: 1px 0 0;
+  clear: both;
+}
+
+b,
+strong {
+  font-family: $bold-font;
+  line-height: inherit;
+}
+
+i,
+em {
+  font-family: $italic-font;
+  line-height: inherit;
+}
+
+i > b,
+b > i,
+em > b,
+b > em,
+i > strong,
+strong > i,
+em > strong,
+strong > em {
+  font-family: $bolditalic-font;
+  line-height: inherit;
+}
+
+small {
+  font-size: 60%;
+  line-height: inherit;
+}

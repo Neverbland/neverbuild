@@ -1,0 +1,63 @@
+/**
+ *  This file specifies globally relevant classes.
+ *
+ *  DO NOT IMPORT node_modules PLUGINS HERE.
+ *   If you need to import SASS for a node_modules package,
+ *    do so in the component that uses it - keeps things
+ *    clean and composible.
+ */
+
+// Base styles
+@import "base/webfonts";
+@import "base/colours";
+@import "base/type";
+@import "base/forms";
+@import "base/base";
+@import "base/z-index";
+
+// Components
+// ========
+// Style your components in the {Component}.scss file
+//  in the same folder - composibility!
+
+// Globally available classes
+// ========
+// These classes won't be mangled by CSS Modules.
+// => Try not to use this to write _all_ your CSS ;)
+:global {
+  $colors: (
+    black: $black,
+    white: $white,
+    blue: $blue,
+    blue-medium: $blue-medium,
+    orange: $orange,
+    orange-medium: $orange-medium,
+    green: $green
+  );
+  // Color classes
+  // <h2 className="white">hello</h2>
+  @each $colour-class, $color-variable in $colors {
+    %#{$colour-class},
+    .#{$colour-class} {
+      color: $color-variable;
+    }
+  }
+
+  // Border-color classes
+  // <h2 className="border-color-white">hello</h2>
+  @each $colour-class, $color-variable in $colors {
+    %border-color-#{$colour-class},
+    .border-color-#{$colour-class} {
+      border-color: $color-variable;
+    }
+  }
+
+  // Background-color classes
+  // <h2 className="bg-white">hello</h2>
+  @each $colour-class, $color-variable in $colors {
+    %bg-#{$colour-class},
+    .bg-#{$colour-class} {
+      background-color: $color-variable;
+    }
+  }
+}

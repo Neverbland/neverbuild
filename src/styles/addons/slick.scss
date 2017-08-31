@@ -1,0 +1,44 @@
+@import "../base/colours";
+@import "./px-to-rem";
+
+:global {
+  .slick-arrow {
+    top: 10%;
+
+    @media (min-width: 768px) {
+      top: 50%;
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .slick-next {
+    width: 0;
+    height: 0;
+    right: rem(-30px);
+    border-style: solid;
+    border-width: rem(7px) 0 rem(7px) rem(14px);
+    border-color: transparent transparent transparent $orange;
+
+    @media (min-width: 768px) {
+      right: rem(-60px);
+      border-width: rem(20px) 0 rem(20px) rem(40px);
+    }
+  }
+
+  .slick-prev {
+    width: 0;
+    height: 0;
+    left: rem(-30px);
+    border-style: solid;
+    border-width: rem(7px) rem(14px) rem(7px) 0;
+    border-color: transparent $green transparent transparent;
+
+    @media (min-width: 768px) {
+      left: rem(-60px);
+      border-width: rem(20px) rem(40px) rem(20px) 0;
+    }
+  }
+}

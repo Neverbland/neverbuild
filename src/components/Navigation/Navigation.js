@@ -1,13 +1,14 @@
 import React from 'react';
 import cx from 'classnames';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './Navigation.css';
 import Link from '../Link';
+
+import s from './Navigation.scss';
 
 class Navigation extends React.Component {
   render() {
     return (
-      <div className={s.root} role="navigation">
+      <nav className={s.nav}>
         <Link className={s.link} to="/about">
           About
         </Link>
@@ -22,7 +23,7 @@ class Navigation extends React.Component {
         <Link className={cx(s.link, s.highlight)} to="/register">
           Sign up
         </Link>
-      </div>
+      </nav>
     );
   }
 }

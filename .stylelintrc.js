@@ -9,9 +9,31 @@ module.exports = {
     // stylelint plugin to sort CSS rules content with specified order
     // https://github.com/hudochenkov/stylelint-order
     'stylelint-order',
+
+    // stylelint plugin for SCSS
+    // https://github.com/kristerkari/stylelint-scss
+    'stylelint-scss',
   ],
 
   rules: {
+    'at-rule-no-unknown': [
+      true,
+      {
+        ignoreAtRules: [
+          'if',
+          'for',
+          'else',
+          'each',
+          'mixin',
+          'extend',
+          'return',
+          'content',
+          'include',
+          'function',
+        ],
+      },
+    ],
+
     'property-no-unknown': [
       true,
       {
@@ -35,7 +57,7 @@ module.exports = {
     ],
 
     // Opinionated rule, you can disable it if you want
-    'string-quotes': 'single',
+    'string-quotes': 'double',
 
     // https://github.com/hudochenkov/stylelint-order/blob/master/rules/order/README.md
     'order/order': [
