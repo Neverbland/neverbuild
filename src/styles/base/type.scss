@@ -1,4 +1,4 @@
-@import "../addons/px-to-rem";
+@import '../addons/px-to-rem';
 
 // Type styles
 html {
@@ -24,18 +24,21 @@ h4,
 h5,
 h6 {
   margin: 14px 0;
-  font-family: $bold-font;
+  font-family: $base-font;
+  font-weight: bold;
   font-style: normal;
   color: $heading-colour;
   text-rendering: optimizeLegibility;
   line-height: 1.4;
 
-  // Because +90% of the titles in this design are the same size.
-  font-size: rem(18px);
-
   @media (min-width: 768px) {
     font-size: rem(24px);
   }
+}
+
+%h1,
+h1 {
+  font-family: $alt-font;
 }
 
 a {
@@ -59,13 +62,13 @@ hr {
 
 b,
 strong {
-  font-family: $bold-font;
+  font-weight: bold;
   line-height: inherit;
 }
 
 i,
 em {
-  font-family: $italic-font;
+  font-style: italic;
   line-height: inherit;
 }
 
@@ -77,7 +80,8 @@ i > strong,
 strong > i,
 em > strong,
 strong > em {
-  font-family: $bolditalic-font;
+  font-weight: bold;
+  font-style: italic;
   line-height: inherit;
 }
 

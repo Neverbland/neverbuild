@@ -233,15 +233,15 @@
 // @param {number} $num - Number of children
 // @param {string} $direction [forward] - Direction of the sort
 // @param {number} $index [0] - Index of the sorting
-@mixin child-index($num, $direction: "forward", $index: 0) {
+@mixin child-index($num, $direction: 'forward', $index: 0) {
   @for $i from 1 through $num {
-    @if ($direction == "forward") {
+    @if ($direction == 'forward') {
       &:nth-child(#{$i}) {
         z-index: order-index($i, $index);
 
         @content;
       }
-    } @else if ($direction == "backward") {
+    } @else if ($direction == 'backward') {
       &:nth-last-child(#{$i}) {
         z-index: order-index($i, $index);
 

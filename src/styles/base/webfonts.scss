@@ -1,16 +1,19 @@
-@import "../addons/font-face";
+@import '../addons/font-face';
 
 /**
  *  Place your webfont files in /public/fonts, then
  *   define the names and paths here.
  */
-// @include font-face("{fontname}", "/fonts/{fontname}-webfont");
-// @include font-face("{fontname}_bold", "/fonts/{fontname}-bold-webfont");
-// @include font-face("{fontname}_italic", "/fonts/{fontname}-italic-webfont");
-// @include font-face("{fontname}_bolditalic", "/fonts/{fontname}-bolditalic-webfont");
+// @include font-face('{fontname}', '/fonts/{fontname}-webfont');
+// @include font-face('{fontname}', '/fonts/{fontname}-bold-webfont', bold);
+// @include font-face('{fontname}', '/fonts/{fontname}-italic-webfont', normal, italic);
+// @include font-face('{fontname}', '/fonts/{fontname}-bolditalic-webfont', bold, italic);
+
+// @include font-face('{altfontname}', '/fonts/{altfontname}-webfont');
+// @include font-face('{altfontname}', '/fonts/{altfontname}-bold-webfont', bold);
+// @include font-face('{altfontname}', '/fonts/{altfontname}-italic-webfont', normal, italic);
+// @include font-face('{altfontname}', '/fonts/{altfontname}-bolditalic-webfont', bold, italic);
 
 // Type variables
 $base-font: sans-serif !default;
-$bold-font: sans-serif !default;
-$italic-font: sans-serif !default;
-$bolditalic-font: sans-serif !default;
+$alt-font: serif !default;
