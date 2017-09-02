@@ -5,7 +5,6 @@ import nodeExternals from 'webpack-node-externals';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 import SpriteLoaderPlugin from 'svg-sprite-loader/plugin';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 import overrideRules from './lib/overrideRules';
 import pkg from '../package.json';
@@ -17,9 +16,9 @@ const isAnalyze =
 
 const reScript = /\.jsx?$/;
 const reStyle = /\.(css|less|scss|sss)$/;
-// const reImage = /\.(bmp|gif|jpe?g|png|svg)$/;
 const reImage = /\.(bmp|gif|jpe?g|png)$/;
 const reSVG = /\.svg$/;
+
 const staticAssetName = isDebug
   ? '[path][name].[ext]?[hash:8]'
   : '[hash:8].[ext]';
@@ -124,46 +123,22 @@ const config = {
           },
 
           // Process internal/project styles (from src folder)
-
           {
             include: path.resolve(__dirname, '../src'),
-            loader: isDebug
-              ? 'css-loader'
-              : ExtractTextPlugin.extract({
-                  use: [
-                    {
-                      loader: 'css-loader',
-                      options: {
-                        // CSS Loader https://github.com/webpack/css-loader
-                        importLoaders: 1,
-                        sourceMap: isDebug,
-                        // CSS Modules https://github.com/css-modules/css-modules
-                        modules: true,
-                        localIdentName: isDebug
-                          ? '[name]-[local]-[hash:base64:5]'
-                          : '[hash:base64:5]',
-                        // CSS Nano http://cssnano.co/options/
-                        minimize: !isDebug,
-                        discardComments: { removeAll: true },
-                      },
-                    },
-                  ],
-                }),
-            options: !isDebug
-              ? ''
-              : {
-                  // CSS Loader https://github.com/webpack/css-loader
-                  importLoaders: 1,
-                  sourceMap: isDebug,
-                  // CSS Modules https://github.com/css-modules/css-modules
-                  modules: true,
-                  localIdentName: isDebug
-                    ? '[name]-[local]-[hash:base64:5]'
-                    : '[hash:base64:5]',
-                  // CSS Nano http://cssnano.co/options/
-                  minimize: !isDebug,
-                  discardComments: { removeAll: true },
-                },
+            loader: 'css-loader',
+            options: {
+              // CSS Loader https://github.com/webpack/css-loader
+              importLoaders: 1,
+              sourceMap: isDebug,
+              // CSS Modules https://github.com/css-modules/css-modules
+              modules: true,
+              localIdentName: isDebug
+                ? '[name]-[local]-[hash:base64:5]'
+                : '[hash:base64:5]',
+              // CSS Nano http://cssnano.co/options/
+              minimize: !isDebug,
+              discardComments: { removeAll: true },
+            },
           },
 
           // Apply PostCSS plugins including autoprefixer
@@ -176,7 +151,7 @@ const config = {
             },
           },
 
-          // Compile Sass to CSS
+          // Compile SASS to CSS
           // https://github.com/webpack-contrib/sass-loader
           {
             test: /\.scss$/,
@@ -188,21 +163,7 @@ const config = {
       // SVG Sprite sheet
       {
         test: reSVG,
-        use: [
-          {
-            loader: 'svg-sprite-loader',
-            options: {
-              // Don't extract because IE can't handle SVG spritesheets
-              // We've implemented a workaround by rendering the SVGs
-              //  onto the page.
-              // extract: true,
-              // This file is specifically ignored in BannerPlugin
-              //  to avoid breaking SVG rendering.
-              // spriteFilename: 'sprite.svg',
-            },
-          },
-          'svgo-loader',
-        ],
+        use: ['svg-sprite-loader', 'svgo-loader'],
       },
 
       // Rules for images
@@ -212,17 +173,7 @@ const config = {
           // Inline lightweight images into CSS
           {
             issuer: reStyle,
-            oneOf: [
-              // Inline lightweight SVGs as UTF-8 encoded DataUrl string
-              // {
-              //   test: /\.svg$/,
-              //   loader: 'svg-url-loader',
-              //   options: {
-              //     name: staticAssetName,
-              //     limit: 4096, // 4kb
-              //   },
-              // },
-
+            use: [
               // Inline lightweight images as Base64 encoded DataUrl string
               {
                 loader: 'url-loader',
@@ -244,7 +195,7 @@ const config = {
         ],
       },
 
-      // Convert plain text into JS module
+      // Convert plain text + GraphQL into JS module
       {
         test: /\.(txt|g(raph)?ql)$/,
         loader: 'raw-loader',
@@ -355,9 +306,6 @@ const clientConfig = {
 
     // For our SVG Sprite
     new SpriteLoaderPlugin(),
-
-    // For our extracted SCSS
-    new ExtractTextPlugin('/public/assets/main.css'),
 
     ...(isDebug
       ? []
@@ -499,17 +447,12 @@ const serverConfig = {
     // For our SVG Sprite
     new SpriteLoaderPlugin(),
 
-    // For our extracted SCSS
-    new ExtractTextPlugin('/public/assets/main.css'),
-
     // Adds a banner to the top of each generated chunk
     // https://webpack.js.org/plugins/banner-plugin/
     new webpack.BannerPlugin({
       banner: 'require("source-map-support").install();',
       raw: true,
       entryOnly: false,
-      // Ignore our generated SVG sprite + CSS
-      exclude: ['sprite.svg', '/public/assets/main.css'],
     }),
   ],
 

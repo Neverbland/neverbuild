@@ -57,7 +57,7 @@ module.exports = {
     ],
 
     // Opinionated rule, you can disable it if you want
-    'string-quotes': 'double',
+    'string-quotes': 'single',
 
     // https://github.com/hudochenkov/stylelint-order/blob/master/rules/order/README.md
     'order/order': [
