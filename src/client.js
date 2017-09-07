@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import deepForceUpdate from 'react-deep-force-update';
 import queryString from 'query-string';
 import { createPath } from 'history/PathUtils';
+import NProgress from 'nprogress';
+
 import App from './components/App';
 import createFetch from './createFetch';
 import history from './history';
@@ -28,6 +30,9 @@ const context = {
   }),
 };
 
+// NProgress configuration
+NProgress.configure({ showSpinner: false });
+
 // Switch off the native scroll restoration behavior and handle it manually
 // https://developers.google.com/web/updates/2015/09/history-api-scroll-restoration
 const scrollPositionsHistory = {};
@@ -36,9 +41,14 @@ if (window.history && 'scrollRestoration' in window.history) {
 }
 
 let onRenderComplete = function initialRenderComplete() {
+  // First page load.
   const elem = document.getElementById('css');
   if (elem) elem.parentNode.removeChild(elem);
+  NProgress.done();
+
+  // Overwrite the function for consecutive page loads
   onRenderComplete = function renderComplete(route, location) {
+    NProgress.done();
     document.title = route.title;
 
     updateMeta('description', route.description);
@@ -94,6 +104,9 @@ async function onLocationChange(location, action) {
     delete scrollPositionsHistory[location.key];
   }
   currentLocation = location;
+
+  // Start the faux-loading
+  NProgress.start();
 
   try {
     // Traverses the list of routes in the order they are defined until

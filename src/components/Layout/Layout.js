@@ -10,6 +10,7 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
  *   Usually the grid is enough.
  */
 import normalizeCss from 'normalize.css';
+import nprogressCss from 'nprogress/nprogress.css';
 import bootstrapGrid from 'bootstrap/scss/bootstrap-grid.scss';
 
 import styles from './Layout.scss';
@@ -35,4 +36,6 @@ class Layout extends React.Component {
   }
 }
 
-export default withStyles(normalizeCss, bootstrapGrid, styles)(Layout);
+export default withStyles(normalizeCss, nprogressCss, bootstrapGrid, styles)(
+  Layout,
+);
