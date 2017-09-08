@@ -95,7 +95,7 @@
     "postcss-pseudoelements": "^5.0.0",
     "postcss-selector-matches": "^3.0.1",
     "postcss-selector-not": "^3.0.1",
-    "prettier": "^1.5.2",
+    "prettier": "^1.6.0",
     "raw-loader": "^0.5.1",
     "react-deep-force-update": "^2.0.1",
     "react-error-overlay": "^1.0.9",
