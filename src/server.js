@@ -18,8 +18,8 @@ import createFetch from './createFetch';
 // import passport from './passport';
 import router from './router';
 import assets from './assets.json'; // eslint-disable-line import/no-unresolved
-import auth from './auth';
 import config from './config';
+import serverConfig from './server-config';
 
 const app = express();
 
@@ -43,7 +43,7 @@ app.use(bodyParser.json());
 // -----------------------------------------------------------------------------
 app.use(
   expressJwt({
-    secret: auth.jwt.secret,
+    secret: serverConfig.auth.jwt.secret,
     credentialsRequired: false,
     getToken: req => req.cookies.id_token,
   }),
@@ -79,7 +79,7 @@ if (__DEV__) {
 //   }),
 //   (req, res) => {
 //     const expiresIn = 60 * 60 * 24 * 180; // 180 days
-//     const token = jwt.sign(req.user, config.auth.jwt.secret, { expiresIn });
+//     const token = jwt.sign(req.user, serverConfig.auth.jwt.secret, { expiresIn });
 //     res.cookie('id_token', token, { maxAge: 1000 * expiresIn, httpOnly: true });
 //     res.redirect('/');
 //   },
