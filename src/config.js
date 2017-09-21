@@ -4,6 +4,8 @@ module.exports = {
 
   // API Gateway
   api: {
+    // GraphCMS API Endpoint
+    graphcms: 'https://api.graphcms.com/simple/v1/neverbuild',
     // API URL to be used in the client-side code
     clientUrl: process.env.API_CLIENT_URL || '',
     // API URL to be used in the server-side code
