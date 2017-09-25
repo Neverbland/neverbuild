@@ -1,16 +1,22 @@
+// ========
+// Define your site's typography definitions here
+// ========
+
+// Imports
+@import './colours';
 @import '../addons/px-to-rem';
+
+// @font-face family names
+//  Keep in sync with:
+//  => /src/styles/base/webfonts
+$base-font: 'OpenSans', sans-serif;
+$alternate-font: 'DroidSerif', serif;
 
 // Type styles
 html {
   font-family: $base-font;
 }
 
-%h1,
-%h2,
-%h3,
-%h4,
-%h5,
-%h6,
 .h1,
 .h2,
 .h3,
@@ -36,9 +42,8 @@ h6 {
   }
 }
 
-%h1,
 h1 {
-  font-family: $alt-font;
+  font-family: $alternate-font;
 }
 
 a {

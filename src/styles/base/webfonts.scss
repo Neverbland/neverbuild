@@ -1,19 +1,27 @@
+/**
+ * Define your site's webfont families here
+ * ========
+ *  - Put the font files in the following directory:
+ *     => /src/components/Layout/fonts/*
+ *
+ *  - Make sure the fonts are then loaded with a path
+ *     relative to /src/components/Layout/
+ *
+ *  It's a little strange, but it means webpack grabs
+ *   the font files and packs them up as assets.
+ */
+
+// Import
 @import '../addons/font-face';
 
-/**
- *  Place your webfont files in /public/fonts, then
- *   define the names and paths here.
- */
-// @include font-face('{fontname}', '/fonts/{fontname}-webfont');
-// @include font-face('{fontname}', '/fonts/{fontname}-bold-webfont', bold);
-// @include font-face('{fontname}', '/fonts/{fontname}-italic-webfont', normal, italic);
-// @include font-face('{fontname}', '/fonts/{fontname}-bolditalic-webfont', bold, italic);
+// Base font
+@include font-face ('OpenSans', './fonts/base/OpenSans-Regular-webfont');
+@include font-face ('OpenSans', './fonts/base/OpenSans-Bold-webfont', bold, normal);
+@include font-face ('OpenSans', './fonts/base/OpenSans-Italic-webfont', normal, italic);
+@include font-face ('OpenSans', './fonts/base/OpenSans-BoldItalic-webfont', bold, italic);
 
-// @include font-face('{altfontname}', '/fonts/{altfontname}-webfont');
-// @include font-face('{altfontname}', '/fonts/{altfontname}-bold-webfont', bold);
-// @include font-face('{altfontname}', '/fonts/{altfontname}-italic-webfont', normal, italic);
-// @include font-face('{altfontname}', '/fonts/{altfontname}-bolditalic-webfont', bold, italic);
-
-// Type variables
-$base-font: sans-serif !default;
-$alt-font: serif !default;
+// Alternate font
+@include font-face ('DroidSerif', './fonts/alternate/DroidSerif-Regular-webfont');
+@include font-face ('DroidSerif', './fonts/alternate/DroidSerif-Bold-webfont', bold, normal);
+@include font-face ('DroidSerif', './fonts/alternate/DroidSerif-Italic-webfont', normal, italic);
+@include font-face ('DroidSerif', './fonts/alternate/DroidSerif-BoldItalic-webfont', bold, italic);

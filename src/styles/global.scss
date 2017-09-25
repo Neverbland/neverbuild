@@ -7,35 +7,37 @@
  *    clean and composible.
  */
 
-// Base styles
-@import 'base/webfonts';
-@import 'base/colours';
-@import 'base/type';
-@import 'base/forms';
-@import 'base/base';
-@import 'base/z-index';
-
 // Components
 // ========
 // Style your components in the {Component}.scss file
 //  in the same folder - composibility!
 
+// Base styles
+// ========
+@import 'base/colours';
+@import 'base/base';
+
+// Typography
+// ========
+@import 'base/webfonts';
+@import 'base/type';
+
 // Globally available classes
 // ========
 // These classes won't be mangled by CSS Modules.
-// => Try not to use this to write _all_ your CSS ;)
+// => Try not to use :global to write _all_ your CSS ;)
 :global {
+  // Variables
   $colors: (
     black: $black,
     white: $white,
+    grey: $grey,
+    softgrey: $softgrey,
     blue: $blue,
-    blue-medium: $blue-medium,
-    orange: $orange,
-    orange-medium: $orange-medium,
-    green: $green
+    blue-medium: $blue-medium
   );
-  // Color classes
-  // <h2 className="white">hello</h2>
+
+  // <p className="white">hello</p>
   @each $colour-class, $color-variable in $colors {
     %#{$colour-class},
     .#{$colour-class} {
@@ -43,8 +45,7 @@
     }
   }
 
-  // Border-color classes
-  // <h2 className="border-color-white">hello</h2>
+  // <p className="border-color-white">hello</p>
   @each $colour-class, $color-variable in $colors {
     %border-color-#{$colour-class},
     .border-color-#{$colour-class} {
@@ -52,8 +53,7 @@
     }
   }
 
-  // Background-color classes
-  // <h2 className="bg-white">hello</h2>
+  // <p className="bg-white">hello</p>
   @each $colour-class, $color-variable in $colors {
     %bg-#{$colour-class},
     .bg-#{$colour-class} {

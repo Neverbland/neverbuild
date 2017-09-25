@@ -43,7 +43,9 @@ if (window.history && 'scrollRestoration' in window.history) {
 let onRenderComplete = function initialRenderComplete() {
   // First page load.
   const elem = document.getElementById('css');
-  if (elem) elem.parentNode.removeChild(elem);
+  if (elem) {
+    setTimeout(() => elem.parentNode.removeChild(elem), 1000);
+  }
   NProgress.done();
 
   // Overwrite the function for consecutive page loads

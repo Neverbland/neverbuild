@@ -1,8 +1,7 @@
-/*
+/**
  * normalize.css + bootstrap-grid are imported in JS file.
  *
  * If you import external CSS files from any internal CSS
  * then it will be inlined and processed with CSS modules.
  */
-
-@import '../../styles/global';
+@import '../../styles/global.scss';
