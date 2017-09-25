@@ -21,7 +21,7 @@
     "loader-utils": "^1.1.0",
     "node-fetch": "^1.7.1",
     "normalize.css": "^7.0.0",
-    "nprogress": "github:neverbland/nprogress",
+    "nprogress": "^0.2.0",
     "passport": "^0.4.0",
     "passport-facebook": "^2.1.1",
     "pretty-error": "^2.1.1",
