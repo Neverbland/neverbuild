@@ -1,6 +1,6 @@
 import React from 'react';
-import cx from 'classnames';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import classnames from 'classnames';
+import withStyles from 'components/withStyles';
 import Link from '../Link';
 
 import s from './Navigation.scss';
@@ -20,7 +20,7 @@ class Navigation extends React.Component {
           Log in
         </Link>
         <span className={s.spacer}>or</span>
-        <Link className={cx(s.link, s.highlight)} to="/register">
+        <Link className={classnames(s.link, s.highlight)} to="/register">
           Sign up
         </Link>
       </nav>

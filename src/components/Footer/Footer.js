@@ -1,5 +1,5 @@
 import React from 'react';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import withStyles from 'components/withStyles';
 import Link from '../Link';
 
 import s from './Footer.scss';

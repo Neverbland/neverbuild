@@ -101,11 +101,8 @@ app.get('*', async (req, res, next) => {
     // https://facebook.github.io/react/docs/context.html
     const context = {
       // Enables critical path CSS rendering
-      // https://github.com/kriasoft/isomorphic-style-loader
-      insertCss: (...styles) => {
-        // eslint-disable-next-line no-underscore-dangle
-        styles.forEach(style => style._getCss && css.add(style._getCss()));
-      },
+      // https://github.com/kriasoft/react-starter-kit/pull/1132
+      insertCss: style => css.add(style.getCss()),
       // Universal HTTP client
       fetch: createFetch(fetch, {
         baseUrl: config.api.serverUrl,
@@ -133,7 +130,7 @@ app.get('*', async (req, res, next) => {
     // https://github.com/kisenka/svg-sprite-loader/tree/master/examples/server-side-rendering
     data.svgSprite = sprite.stringify();
 
-    data.styles = [{ id: 'css', cssText: [...css].join('') }];
+    data.styles = [...css];
     data.scripts = [assets.vendor.js];
     if (route.chunks) {
       data.scripts.push(...route.chunks.map(chunk => assets[chunk].js));
@@ -165,7 +162,7 @@ app.use((err, req, res, next) => {
     <Html
       title="Internal Server Error"
       description={err.message}
-      styles={[{ id: 'css', cssText: errorPageStyle._getCss() }]} // eslint-disable-line no-underscore-dangle
+      styles={[errorPageStyle.getCss()]} // eslint-disable-line css-modules/no-undef-class
     >
       {ReactDOM.renderToString(<ErrorPageWithoutStyle error={err} />)}
     </Html>,

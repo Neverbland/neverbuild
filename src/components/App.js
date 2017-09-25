@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 const ContextType = {
   // Enables critical path CSS rendering
-  // https://github.com/kriasoft/isomorphic-style-loader
-  insertCss: PropTypes.func.isRequired,
+  // https://github.com/kriasoft/react-starter-kit/pull/1132
+  insertCss: PropTypes.func,
   // Universal HTTP client
   fetch: PropTypes.func.isRequired,
 };

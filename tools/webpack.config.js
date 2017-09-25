@@ -105,16 +105,11 @@ const config = {
       {
         test: reStyle,
         rules: [
-          // Convert CSS into JS module
-          {
-            issuer: { not: [reStyle] },
-            use: 'isomorphic-style-loader',
-          },
-
           // Process external/third-party styles
           {
             exclude: path.resolve(__dirname, '../src'),
-            loader: 'css-loader',
+            loader: path.resolve(__dirname, './lib/inline-css-loader.js'),
+            // loader: 'css-loader',
             options: {
               sourceMap: isDebug,
               minimize: !isDebug,
@@ -125,8 +120,11 @@ const config = {
           // Process internal/project styles (from src folder)
           {
             include: path.resolve(__dirname, '../src'),
-            loader: 'css-loader',
+            // Custom loader as explained here:
+            // => https://github.com/kriasoft/react-starter-kit/pull/1132
+            loader: path.resolve(__dirname, './lib/inline-css-loader.js'),
             options: {
+              identName: isDebug ? '[path][name].[ext]' : '[hash:8]',
               // CSS Loader https://github.com/webpack/css-loader
               importLoaders: 1,
               sourceMap: isDebug,

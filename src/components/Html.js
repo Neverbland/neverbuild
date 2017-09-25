@@ -52,7 +52,7 @@ class Html extends React.Component {
           {styles.map(style => (
             <style
               key={style.id}
-              id={style.id}
+              data-id={style.id}
               dangerouslySetInnerHTML={{ __html: style.cssText }}
             />
           ))}

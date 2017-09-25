@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import withStyles from 'components/withStyles';
 
 // NOTE: This should stay .css and not .scss
 import s from './ErrorPage.css';
