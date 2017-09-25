@@ -84,7 +84,7 @@ module.exports = function loader(content, sourceMap) {
               `" + require(${loaderUtils.stringifyRequest(
                 this,
                 urlRequest,
-              )}) + "` + `${url.substr(idx)}`
+              )}) + "` + `${url.substr(idx)}` // eslint-disable-line no-useless-concat
             );
           }
           urlRequest = url;
