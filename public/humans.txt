@@ -1,7 +1,7 @@
 # humanstxt.org/
 # The humans responsible & technology colophon
 
-# TEAM
+# NEVERBLAND
 
   <name> -- <role> -- <twitter>
 
@@ -11,5 +11,5 @@
 
 # TECHNOLOGY COLOPHON
 
-  CSS3, HTML5, JavaScript
+  React, SVG Sprite, SASS, HTML5, JavaScript, Webpack
   React Starter Kit -- https://reactstarter.com/
