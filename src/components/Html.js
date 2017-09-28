@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import serialize from 'serialize-javascript';
 
@@ -6,7 +6,7 @@ import config from '../config';
 
 /* eslint-disable react/no-danger */
 
-class Html extends React.Component {
+class Html extends Component {
   static propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,

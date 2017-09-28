@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import withStyles from 'components/withStyles';
 
 // NOTE: This should stay .css and not .scss
 import s from './ErrorPage.css';
 
-class ErrorPage extends React.Component {
+class ErrorPage extends Component {
   static propTypes = {
     error: PropTypes.shape({
       name: PropTypes.string.isRequired,

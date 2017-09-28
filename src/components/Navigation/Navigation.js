@@ -1,30 +1,40 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import withStyles from 'components/withStyles';
-import Link from '../Link';
+import Link from 'components/Link';
 
 import s from './Navigation.scss';
 
-class Navigation extends React.Component {
+// Navigation items
+import list from './navigation.json';
+
+class Navigation extends Component {
+  static propTypes = {
+    currentUrl: PropTypes.string.isRequired,
+  };
+
   render() {
-    return (
-      <nav className={s.nav}>
-        <Link className={s.link} to="/about">
-          About
+    const { currentUrl } = this.props;
+
+    const nav = list.map(item => {
+      const isActive = item.url === currentUrl;
+
+      return (
+        <Link
+          to={item.url}
+          key={item.url}
+          className={classnames({
+            [s.active]: isActive,
+            [s.link]: true,
+          })}
+        >
+          {item.name}
         </Link>
-        <Link className={s.link} to="/contact">
-          Contact
-        </Link>
-        <span className={s.spacer}> | </span>
-        <Link className={s.link} to="/login">
-          Log in
-        </Link>
-        <span className={s.spacer}>or</span>
-        <Link className={classnames(s.link, s.highlight)} to="/register">
-          Sign up
-        </Link>
-      </nav>
-    );
+      );
+    });
+
+    return <nav className={s.nav}>{nav}</nav>;
   }
 }
 

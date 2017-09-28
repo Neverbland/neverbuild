@@ -11,6 +11,7 @@ body {
   position: relative;
   color: $body-text-colour;
   background-color: $background-colour;
+  overflow-y: scroll;
 }
 
 *::selection {

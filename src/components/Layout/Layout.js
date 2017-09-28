@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import withStyles from 'components/withStyles';
+
+// Components
+import Header from 'components/Header';
+import Feedback from 'components/Feedback';
+import Footer from 'components/Footer';
 
 /**
  *  Import any globally applicable styles here so they're NOT turned
@@ -15,22 +20,19 @@ import bootstrapGrid from 'bootstrap/scss/bootstrap-grid.scss';
 
 import styles from './Layout.scss';
 
-import Header from '../Header';
-import Feedback from '../Feedback';
-import Footer from '../Footer';
-
-class Layout extends React.Component {
+class Layout extends Component {
   static propTypes = {
+    path: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired,
   };
 
   render() {
     return (
       <div>
-        <Header />
+        <Header path={this.props.path} />
         {this.props.children}
         <Feedback />
-        <Footer />
+        <Footer currentUrl={this.props.path} />
       </div>
     );
   }

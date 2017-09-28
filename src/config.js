@@ -1,3 +1,9 @@
+// Global configuration
+// -----------------------------------------------------------------------------
+// Use this file for any configuration data
+// These variables are shared on the server and client
+//  and can be imported on both.
+
 module.exports = {
   // Node.js app
   port: process.env.PORT || 3000,

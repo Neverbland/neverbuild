@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import withStyles from 'components/withStyles';
 
 import s from './Home.scss';
 
-class Home extends React.Component {
+class Home extends Component {
   static propTypes = {
     news: PropTypes.arrayOf(
       PropTypes.shape({

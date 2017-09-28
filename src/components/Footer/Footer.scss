@@ -18,13 +18,11 @@
   font-size: 1em;
 }
 
-.link,
-.link:active,
-.link:visited {
+.link {
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
 }
 
-.link:hover {
+.active {
   color: rgba(255, 255, 255, 1);
 }

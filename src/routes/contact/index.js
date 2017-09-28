@@ -1,15 +1,17 @@
 import React from 'react';
-import Layout from '../../components/Layout';
+
+// Components
+import Layout from 'components/Layout';
 import Contact from './Contact';
 
 const title = 'Contact Us';
 
-function action() {
+function action({ path }) {
   return {
     chunks: ['contact'],
     title,
     component: (
-      <Layout>
+      <Layout path={path}>
         <Contact title={title} />
       </Layout>
     ),

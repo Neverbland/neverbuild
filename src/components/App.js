@@ -1,4 +1,4 @@
-import React from 'react';
+import { PureComponent, Children } from 'react';
 import PropTypes from 'prop-types';
 
 const ContextType = {
@@ -31,7 +31,7 @@ const ContextType = {
  *     container,
  *   );
  */
-class App extends React.PureComponent {
+class App extends PureComponent {
   static propTypes = {
     context: PropTypes.shape(ContextType).isRequired,
     children: PropTypes.element.isRequired,
@@ -46,7 +46,7 @@ class App extends React.PureComponent {
   render() {
     // NOTE: If you need to add or modify header, footer etc. of the app,
     // please do that inside the Layout component.
-    return React.Children.only(this.props.children);
+    return Children.only(this.props.children);
   }
 }
 

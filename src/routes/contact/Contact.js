@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import withStyles from 'components/withStyles';
 
 import s from './Contact.scss';
 
-class Contact extends React.Component {
+class Contact extends Component {
   static propTypes = {
     title: PropTypes.string.isRequired,
   };

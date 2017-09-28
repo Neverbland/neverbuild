@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import withStyles from 'components/withStyles';
 
 import s from './Login.scss';
 
-class Login extends React.Component {
+class Login extends Component {
   static propTypes = {
     title: PropTypes.string.isRequired,
   };

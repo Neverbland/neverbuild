@@ -1,11 +1,14 @@
 import React from 'react';
-import Home from './Home';
-import Layout from '../../components/Layout';
 
+// Components
+import Layout from 'components/Layout';
+import Home from './Home';
+
+// Dynamic Content loaded from GraphCMS
 import { api } from '../../config';
 import query from './news.gql';
 
-async function action({ fetch }) {
+async function action({ path, fetch }) {
   const resp = await fetch(api.graphcms, {
     body: JSON.stringify({
       query,
@@ -19,7 +22,7 @@ async function action({ fetch }) {
     title: 'React Starter Kit',
     description: 'Hello',
     component: (
-      <Layout>
+      <Layout path={path}>
         <Home news={data.allNews} />
       </Layout>
     ),

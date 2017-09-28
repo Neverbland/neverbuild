@@ -1,11 +1,13 @@
 import React from 'react';
-import Layout from '../../components/Layout';
+
+// Components
+import Layout from 'components/Layout';
 import Admin from './Admin';
 
 const title = 'Admin Page';
 const isAdmin = false;
 
-function action() {
+function action({ path }) {
   if (!isAdmin) {
     return { redirect: '/login' };
   }
@@ -14,7 +16,7 @@ function action() {
     chunks: ['admin'],
     title,
     component: (
-      <Layout>
+      <Layout path={path}>
         <Admin title={title} />
       </Layout>
     ),

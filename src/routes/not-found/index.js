@@ -1,15 +1,17 @@
 import React from 'react';
-import Layout from '../../components/Layout';
+
+// Components
+import Layout from 'components/Layout';
 import NotFound from './NotFound';
 
 const title = 'Page Not Found';
 
-function action() {
+function action({ path }) {
   return {
     chunks: ['not-found'],
     title,
     component: (
-      <Layout>
+      <Layout path={path}>
         <NotFound title={title} />
       </Layout>
     ),

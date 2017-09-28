@@ -10,9 +10,7 @@
   font-size: 1.125em; /* ~18px */
 }
 
-.link,
-.link:active,
-.link:visited {
+.link {
   color: rgba(255, 255, 255, 0.6);
 }
 
@@ -20,18 +18,6 @@
   color: rgba(255, 255, 255, 1);
 }
 
-.highlight {
-  margin-right: 8px;
-  margin-left: 8px;
-  border-radius: 3px;
-  background: rgba(0, 0, 0, 0.15);
-  color: #fff;
-}
-
-.highlight:hover {
-  background: rgba(0, 0, 0, 0.3);
-}
-
-.spacer {
-  color: rgba(255, 255, 255, 0.3);
+.active {
+  color: rgba(255, 255, 255, 1);
 }

@@ -1,14 +1,18 @@
 import React from 'react';
-import Layout from '../../components/Layout';
-import Page from '../../components/Page';
+
+// Components
+import Layout from 'components/Layout';
+import Page from 'components/Page';
+
+// Content
 import privacy from './privacy.md';
 
-function action() {
+function action({ path }) {
   return {
     chunks: ['privacy'],
     title: privacy.title,
     component: (
-      <Layout>
+      <Layout path={path}>
         <Page {...privacy} />
       </Layout>
     ),

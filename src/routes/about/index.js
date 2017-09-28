@@ -1,14 +1,18 @@
 import React from 'react';
-import Layout from '../../components/Layout';
-import Page from '../../components/Page';
+
+// Components
+import Layout from 'components/Layout';
+import Page from 'components/Page';
+
+// Content
 import about from './about.md';
 
-function action() {
+function action({ path }) {
   return {
     chunks: ['about'],
     title: about.title,
     component: (
-      <Layout>
+      <Layout path={path}>
         <Page {...about} />
       </Layout>
     ),
