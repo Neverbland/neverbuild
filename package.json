@@ -1,6 +1,6 @@
 {
   "name": "neverbuild",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "private": true,
   "engines": {
     "node": ">=6.5",
@@ -149,7 +149,7 @@
     ]
   },
   "lint-staged": {
-    "src/*.{js,jsx,json}": [
+    "src/**/*.{js,jsx,json}": [
       "prettier --single-quote --trailing-comma all --write",
       "git add"
     ],
