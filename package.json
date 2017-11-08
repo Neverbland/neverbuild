@@ -1,12 +1,17 @@
 {
   "name": "neverbuild",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "private": true,
   "engines": {
     "node": ">=6.5",
     "npm": ">=3.10"
   },
-  "browserslist": [">1%", "last 4 versions", "Firefox ESR", "not ie < 9"],
+  "browserslist": [
+    ">1%",
+    "last 4 versions",
+    "Firefox ESR",
+    "not ie < 9"
+  ],
   "dependencies": {
     "babel-polyfill": "^6.23.0",
     "body-parser": "^1.17.2",
@@ -130,7 +135,9 @@
     ],
     "env": {
       "test": {
-        "plugins": ["rewire"]
+        "plugins": [
+          "rewire"
+        ]
       }
     },
     "ignore": [
@@ -142,20 +149,24 @@
     ]
   },
   "lint-staged": {
-    "*.{js,jsx,json}": [
+    "src/*.{js,jsx,json}": [
       "prettier --single-quote --trailing-comma all --write",
       "git add"
     ],
-    "*.{gql,graphql}": ["prettier --write --parser graphql", "git add"],
-    "*.{css,less,scss,sss}": ["prettier --single-quote --write", "git add"]
+    "*.{gql,graphql}": [
+      "prettier --write --parser graphql",
+      "git add"
+    ],
+    "*.{css,less,scss,sss}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
   },
   "scripts": {
     "precommit": "lint-staged",
     "fix": "npm run fix-js && npm run fix-css",
-    "fix-css":
-      "prettier \"src/**/*.{css,less,scss,sss}\" --single-quote --write",
-    "fix-js":
-      "prettier \"src/**/*.{js,jsx,json}\" --single-quote --trailing-comma all --write",
+    "fix-css": "prettier \"src/**/*.{css,less,scss,sss}\" --single-quote --write",
+    "fix-js": "prettier \"src/**/*.{js,jsx,json}\" --single-quote --trailing-comma all --write",
     "lint-css": "stylelint \"src/**/*.scss\" --syntax scss",
     "clean": "babel-node tools/run clean",
     "copy": "babel-node tools/run copy",
