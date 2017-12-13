@@ -3,6 +3,5 @@
   - Stylelint + Stylelint Webpack integration
 - ESLint Webpack integration
 - SVG Loader
-- README
 - SVGO for `"lint-staged"`
 - Prettier example page
