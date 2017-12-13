@@ -5,3 +5,4 @@
 - SVG Loader
 - README
 - SVGO for `"lint-staged"`
+- Prettier example page
