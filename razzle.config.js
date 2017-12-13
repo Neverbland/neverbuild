@@ -1,1 +1,7 @@
-// Extend webpack config here
+module.exports = {
+  modify: (config, { target, dev }, webpack) => {
+    // do something to config
+
+    return config;
+  }
+};
