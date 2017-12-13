@@ -17,6 +17,10 @@ Kickstarts a new React app
 
 Below is a list of commands you will probably find useful.
 
+### `npm install`
+
+Install the project.
+
 ### `npm start`
 
 Runs the project in development mode.   
