@@ -1,20 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import logo from './logo.svg';
-import './Home.css';
+import styles from './Home.scss';
 
-class Home extends Component {
+class Home {
   render() {
+    console.log(styles);
     return (
-      <div className="Home">
-        <div className="Home-header">
-          <img src={logo} className="Home-logo" alt="logo" />
+      <div className={styles.home}>
+        <div className={styles.homeHeader}>
+          <img src={logo} className={styles.homeLogo} alt="logo" />
           <h2>Welcome to Razzle dsfasf</h2>
         </div>
-        <p className="Home-intro">
+        <p className={styles.homeIntro}>
           To get started, edit <code>src/App.js</code> or{' '}
           <code>src/Home.js</code> and save to reload.
         </p>
-        <ul className="Home-resources">
+        <ul className={styles.homeResources}>
           <li>
             <a href="https://github.com/jaredpalmer/razzle">Docs</a>
           </li>
