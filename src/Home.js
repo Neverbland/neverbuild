@@ -6,7 +6,7 @@ const Home = () => (
   <div className={styles.home}>
     <div className={styles.homeHeader}>
       <img src={logo} className={styles.homeLogo} alt="logo" />
-      <h2>Welcome to Razzle dsfasf</h2>
+      <h2>Welcome to Neverbuild</h2>
     </div>
     <p className={styles.homeIntro}>
       To get started, edit <code>src/App.js</code> or <code>src/Home.js</code>{' '}
