@@ -7,13 +7,13 @@ const Wrapper = styled.div`
 `;
 
 const rotate360 = keyframes`
-	from {
-		transform: rotate(0deg);
-	}
+  from {
+    transform: rotate(0deg);
+  }
 
-	to {
-		transform: rotate(360deg);
-	}
+  to {
+    transform: rotate(360deg);
+  }
 `;
 
 const Header = styled.div`
