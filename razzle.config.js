@@ -35,6 +35,7 @@ module.exports = {
     // Adds vendor prefixing to support IE9 and above
     const postCSSLoaderOptions = {
       ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
+      sourceMap: true,
       plugins: () => [
         require('postcss-flexbugs-fixes'),
         autoprefixer({
