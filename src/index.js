@@ -1,3 +1,4 @@
+/* eslint-disable no-alert, no-console */
 import http from 'http';
 import app from './server';
 
@@ -18,3 +19,4 @@ if (module.hot) {
     currentApp = newApp;
   });
 }
+/* eslint-enable no-alert, no-console */

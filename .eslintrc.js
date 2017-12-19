@@ -36,6 +36,7 @@ module.exports = {
     'arrow-parens': [0],
     'class-methods-use-this': [0],
     'comma-dangle': ['error', 'never'],
+    'function-paren-newline': [0],
     'global-require': [0],
     'import/no-dynamic-require': [0],
     'import/prefer-default-export': [0],
@@ -44,6 +45,7 @@ module.exports = {
     'no-plusplus': [0],
     radix: [0],
     'react/forbid-prop-types': [0],
+    'react/jsx-curly-brace-presence': [0],
     'react/jsx-filename-extension': [
       1,
       {

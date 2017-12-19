@@ -1,14 +1,30 @@
-'use strict';
-
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const path = require('path');
 
 module.exports = {
-  modify(config, { target, dev }, webpack) {
+  modify(config, { target, dev }) {
     const appConfig = Object.assign({}, config);
     const isServer = target !== 'web';
 
+    // ESLint
+    // ====================
+    appConfig.module.rules.push({
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: [
+        'babel-loader',
+        {
+          loader: 'eslint-loader',
+          options: {
+            emitError: true,
+            configFile: '.eslintrc.js'
+          }
+        }
+      ]
+    });
+
+    // SCSS Modules
+    // ====================
     // Options for PostCSS as we reference these options twice
     // Adds vendor prefixing to support IE9 and above
     const postCSSLoaderOptions = {
@@ -130,6 +146,6 @@ module.exports = {
       });
     }
 
-    loader: return appConfig;
+    return appConfig;
   }
 };
