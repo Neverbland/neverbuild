@@ -4,7 +4,6 @@ import styles from './Home.scss';
 
 class Home extends Component {
   render() {
-    console.log(styles);
     return (
       <div className={styles.home}>
         <div className={styles.homeHeader}>
