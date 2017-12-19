@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "license": "MIT",
   "lint-staged": {
-    "*.{js, scss}": ["prettier --single-quote --write", "git add"]
+    "*.{js}": ["prettier-eslint --single-quote --write", "git add"],
+    "*.{scss}": ["prettier --single-quote --write", "git add"]
   },
   "scripts": {
     "start": "razzle start",
@@ -33,6 +34,7 @@
     "isomorphic-style-loader": "^4.0.0",
     "node-sass": "^4.7.2",
     "postcss-flexbugs-fixes": "^3.2.0",
+    "prettier-eslint": "^8.3.1",
     "raf": "^3.4.0",
     "razzle": "^0.8.6",
     "react": "^16.1.1",
