@@ -28,40 +28,8 @@ module.exports = {
     };
 
     if (dev) {
-      appConfig.module.rules = appConfig.module.rules.map(rule => {
-        if (rule.test && !!'.css'.match(rule.test)) {
-          return {
-            test: /\.css$/,
-            exclude: /\.module\.css$/,
-            use: isServer
-              ? [
-                  {
-                    loader: 'css-loader',
-                    options: {
-                      importLoaders: 1
-                    }
-                  }
-                ]
-              : [
-                  require.resolve('style-loader'),
-                  {
-                    loader: require.resolve('css-loader'),
-                    options: {
-                      importLoaders: 1
-                    }
-                  },
-                  {
-                    loader: require.resolve('postcss-loader'),
-                    options: postCSSLoaderOptions
-                  }
-                ]
-          };
-        }
-        return rule;
-      });
-
       appConfig.module.rules.push({
-        test: /\.module\.css$/,
+        test: /\.scss$/,
         use: isServer
           ? [
               'isomorphic-style-loader',
@@ -72,6 +40,9 @@ module.exports = {
                   modules: true,
                   localIdentName: '[name]__[local]--[hash:base64:5]'
                 }
+              },
+              {
+                loader: require.resolve('sass-loader')
               }
             ]
           : [
@@ -87,44 +58,18 @@ module.exports = {
               {
                 loader: require.resolve('postcss-loader'),
                 options: postCSSLoaderOptions
+              },
+              {
+                loader: require.resolve('sass-loader'),
+                options: {
+                  sourceMap: true
+                }
               }
             ]
       });
     } else if (!dev && !isServer) {
-      appConfig.module.rules = appConfig.module.rules.map(rule => {
-        if (rule.test && !!'.css'.match(rule.test)) {
-          return {
-            test: /\.css$/,
-            exclude: /\.module\.css$/,
-            use: ExtractTextPlugin.extract({
-              fallback: {
-                loader: require.resolve('style-loader'),
-                options: {
-                  hmr: false
-                }
-              },
-              use: [
-                {
-                  loader: require.resolve('css-loader'),
-                  options: {
-                    importLoaders: 1,
-                    minimize: true,
-                    sourceMap: true
-                  }
-                },
-                {
-                  loader: require.resolve('postcss-loader'),
-                  options: postCSSLoaderOptions
-                }
-              ]
-            })
-          };
-        }
-        return rule;
-      });
-
       appConfig.module.rules.push({
-        test: /\.module\.css$/,
+        test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: {
             loader: require.resolve('style-loader'),
@@ -146,6 +91,12 @@ module.exports = {
             {
               loader: require.resolve('postcss-loader'),
               options: postCSSLoaderOptions
+            },
+            {
+              loader: require.resolve('sass-loader'),
+              options: {
+                sourceMap: true
+              }
             }
           ]
         })
@@ -155,28 +106,8 @@ module.exports = {
         new ExtractTextPlugin('static/css/[name].[contenthash:8].css')
       );
     } else if (!dev && isServer) {
-      appConfig.module.rules = appConfig.module.rules.map(rule => {
-        if (rule.test && !!'.css'.match(rule.test)) {
-          return {
-            test: /\.css$/,
-            exclude: /\.module\.css$/,
-            use: [
-              {
-                loader: require.resolve('css-loader'),
-                options: {
-                  importLoaders: 1,
-                  minimize: true,
-                  sourceMap: true
-                }
-              }
-            ]
-          };
-        }
-        return rule;
-      });
-
       appConfig.module.rules.push({
-        test: /\.module\.css$/,
+        test: /\.scss$/,
         use: [
           'isomorphic-style-loader',
           {
@@ -187,6 +118,12 @@ module.exports = {
               sourceMap: true,
               modules: true,
               localIdentName: '[name]__[local]--[hash:base64:5]'
+            }
+          },
+          {
+            loader: require.resolve('sass-loader'),
+            options: {
+              sourceMap: true
             }
           }
         ]
