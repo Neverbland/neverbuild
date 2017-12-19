@@ -1,32 +1,70 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import styles from './Home.scss';
+import styled, { keyframes } from 'styled-components';
+import neverbland from './logo.svg';
+
+const Wrapper = styled.div`
+  text-align: center;
+`;
+
+const rotate360 = keyframes`
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+`;
+
+const Header = styled.div`
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+`;
+
+const Logo = styled.img`
+  animation: ${rotate360} infinite 20s linear;
+  height: 80px;
+`;
+
+const Intro = styled.div`
+  font-size: large;
+`;
+
+const Resources = styled.ul`
+  list-style: none;
+`;
+
+const Resource = styled.li`
+  display: inline-block;
+  padding: 1rem;
+`;
 
 class Home extends Component {
   render() {
-    console.log(styles);
     return (
-      <div className={styles.home}>
-        <div className={styles.homeHeader}>
-          <img src={logo} className={styles.homeLogo} alt="logo" />
+      <Wrapper>
+        <Header>
+          <Logo src={neverbland} alt="Neverbland Logo" />
           <h2>Welcome to Razzle dsfasf</h2>
-        </div>
-        <p className={styles.homeIntro}>
+        </Header>
+        <Intro>
           To get started, edit <code>src/App.js</code> or{' '}
           <code>src/Home.js</code> and save to reload.
-        </p>
-        <ul className={styles.homeResources}>
-          <li>
+        </Intro>
+        <Resources>
+          <Resource>
             <a href="https://github.com/jaredpalmer/razzle">Docs</a>
-          </li>
-          <li>
+          </Resource>
+          <Resource>
             <a href="https://github.com/jaredpalmer/razzle/issues">Issues</a>
-          </li>
-          <li>
+          </Resource>
+          <Resource>
             <a href="https://palmer.chat">Community Slack</a>
-          </li>
-        </ul>
-      </div>
+          </Resource>
+        </Resources>
+      </Wrapper>
     );
   }
 }
