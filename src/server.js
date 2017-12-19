@@ -15,8 +15,8 @@ server
     // Testing precommit lint-staged.
     const markup = renderToString(
       <StaticRouter context={context} location={req.url}>
-          <App />
-          </StaticRouter>
+        <App />
+      </StaticRouter>
     );
 
     if (context.url) {

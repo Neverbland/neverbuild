@@ -3,16 +3,17 @@
   "version": "0.1.0",
   "license": "MIT",
   "lint-staged": {
-    "*.{js}": ["prettier-eslint --single-quote --write", "git add"],
-    "*.{scss}": ["prettier --single-quote --write", "git add"]
+    "*.{js, scss}": [
+      "prettier-eslint --write",
+      "git add"
+    ]
   },
   "scripts": {
     "start": "razzle start",
     "build": "razzle build",
     "test": "razzle test --env=jsdom",
     "start:prod": "NODE_ENV=production node build/server.js",
-    "svg:pretty":
-      "find src/images -name '*.svg' -type f -exec svgo --pretty --indent=2 '{}' \\;",
+    "svg:pretty": "find src/images -name '*.svg' -type f -exec svgo --pretty --indent=2 '{}' \\;",
     "precommit": "lint-staged"
   },
   "dependencies": {
@@ -34,7 +35,7 @@
     "isomorphic-style-loader": "^4.0.0",
     "node-sass": "^4.7.2",
     "postcss-flexbugs-fixes": "^3.2.0",
-    "prettier-eslint": "^8.3.1",
+    "prettier-eslint-cli": "^4.6.1",
     "raf": "^3.4.0",
     "razzle": "^0.8.6",
     "react": "^16.1.1",
