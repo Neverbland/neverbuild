@@ -1,5 +1,5 @@
-import autoprefixer from 'autoprefixer';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
+const autoprefixer = require('autoprefixer');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   modify(config, { target, dev }) {
@@ -12,7 +12,13 @@ module.exports = {
       test: /\.js$/,
       exclude: /node_modules/,
       use: [
-        'babel-loader',
+        {
+          loader: 'babel-loader',
+          options: {
+            presets: ['razzle/babel'],
+            plugins: ['transform-react-jsx']
+          }
+        },
         {
           loader: 'eslint-loader',
           options: {
@@ -48,40 +54,40 @@ module.exports = {
         test: /\.scss$/,
         use: isServer
           ? [
-              'isomorphic-style-loader',
-              {
-                loader: require.resolve('css-loader'),
-                options: {
-                  importLoaders: 1,
-                  modules: true,
-                  localIdentName: '[name]__[local]--[hash:base64:5]'
-                }
-              },
-              {
-                loader: require.resolve('sass-loader')
+            'isomorphic-style-loader',
+            {
+              loader: require.resolve('css-loader'),
+              options: {
+                importLoaders: 1,
+                modules: true,
+                localIdentName: '[name]__[local]--[hash:base64:5]'
               }
-            ]
+            },
+            {
+              loader: require.resolve('sass-loader')
+            }
+          ]
           : [
-              require.resolve('style-loader'),
-              {
-                loader: require.resolve('css-loader'),
-                options: {
-                  importLoaders: 1,
-                  modules: true,
-                  localIdentName: '[name]__[local]--[hash:base64:5]'
-                }
-              },
-              {
-                loader: require.resolve('postcss-loader'),
-                options: postCSSLoaderOptions
-              },
-              {
-                loader: require.resolve('sass-loader'),
-                options: {
-                  sourceMap: true
-                }
+            require.resolve('style-loader'),
+            {
+              loader: require.resolve('css-loader'),
+              options: {
+                importLoaders: 1,
+                modules: true,
+                localIdentName: '[name]__[local]--[hash:base64:5]'
               }
-            ]
+            },
+            {
+              loader: require.resolve('postcss-loader'),
+              options: postCSSLoaderOptions
+            },
+            {
+              loader: require.resolve('sass-loader'),
+              options: {
+                sourceMap: true
+              }
+            }
+          ]
       });
     } else if (!dev && !isServer) {
       appConfig.module.rules.push({
