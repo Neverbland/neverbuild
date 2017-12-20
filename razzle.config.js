@@ -1,5 +1,11 @@
+const path = require('path');
+const fs = require('fs');
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+
+const appDirectory = fs.realpathSync(process.cwd());
+const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 
 module.exports = {
   modify(config, { target, dev }) {
@@ -157,6 +163,23 @@ module.exports = {
         ]
       });
     }
+
+    // SVG Sprite
+    // ====================
+    appConfig.module.rules[2].exclude.push(resolveApp('src/images/sprite'));
+    appConfig.module.rules.push({
+      test: /\.svg$/,
+      include: [resolveApp('src/images/sprite')],
+      use: [
+        {
+          loader: require.resolve('svg-sprite-loader'),
+          options: {
+            symbolId: '[name]_[hash]',
+            esModule: false
+          }
+        }
+      ]
+    });
 
     return appConfig;
   }

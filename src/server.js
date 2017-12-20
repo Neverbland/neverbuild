@@ -1,10 +1,13 @@
+// Dependencies
 import React from 'react';
 import { StaticRouter } from 'react-router-dom';
 import express from 'express';
 import { renderToString } from 'react-dom/server';
+// Components
 import App from './App';
-
+// Assets
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
+const svgSprite = require('svg-sprite-loader/runtime/sprite.build');
 
 const server = express();
 server
@@ -25,17 +28,17 @@ server
         `<!doctype html>
           <html lang="en">
           <head>
-              <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-              <meta charSet="utf-8" />
-              <title>Neverbuild</title>
-              <meta name="viewport" content="width=device-width, initial-scale=1">
-              ${
+            <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+            <meta charSet="utf-8" />
+            <title>Neverbuild</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            ${
   assets.client.css
     ? `<link rel="stylesheet" href="${assets.client.css}">`
     : ''
 }
-              <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch,Promise,Object.assign"></script>
-              ${
+            <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch,Promise,Object.assign"></script>
+            ${
   process.env.NODE_ENV === 'production'
     ? `<script src="${assets.client.js}" defer></script>`
     : `<script src="${
@@ -44,9 +47,11 @@ server
 }
           </head>
           <body>
-              <div id="root">${markup}</div>
+            ${svgSprite.stringify()}
+            <div id="root">${markup}</div>
           </body>
-          </html>`
+          </html>
+        `
       );
     }
   });
