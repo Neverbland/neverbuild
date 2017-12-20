@@ -1,8 +1,8 @@
 module.exports = {
   root: true,
   parser: 'babel-eslint',
-  extends: ['airbnb', 'plugin:css-modules/recommended'],
-  plugins: ['import', 'jsx-a11y', 'react', 'css-modules'],
+  extends: ['airbnb'],
+  plugins: ['import', 'jsx-a11y', 'react'],
   env: {
     browser: true,
     commonjs: true,
@@ -44,6 +44,7 @@ module.exports = {
     'import/prefer-default-export': [0],
     'jsx-a11y/no-static-element-interactions': [0],
     'max-len': [0],
+    'no-console': [0],
     'no-plusplus': [0],
     radix: [0],
     'react/forbid-prop-types': [0],
