@@ -1,8 +1,8 @@
 module.exports = {
   root: true,
   parser: 'babel-eslint',
-  extends: 'airbnb',
-  plugins: ['import', 'jsx-a11y', 'react'],
+  extends: ['airbnb', 'plugin:css-modules/recommended'],
+  plugins: ['import', 'jsx-a11y', 'react', 'css-modules'],
   env: {
     browser: true,
     commonjs: true,
@@ -27,7 +27,9 @@ module.exports = {
     'import/extensions': ['.js'],
     'import/resolver': {
       node: {
-        extensions: ['.js', '.json']
+        extensions: ['.js', '.json'],
+        // Allow absolute paths in imports, e.g. import Button from 'components/Button'
+        moduleDirectory: ['node_modules', 'src']
       }
     }
   },
