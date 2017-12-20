@@ -29,7 +29,7 @@ module.exports = {
       node: {
         extensions: ['.js', '.json'],
         // Allow absolute paths in imports, e.g. import Button from 'components/Button'
-        moduleDirectory: ['node_modules', 'src']
+        moduleDirectory: ['node_modules', 'src', 'src/js', 'src/css']
       }
     }
   },

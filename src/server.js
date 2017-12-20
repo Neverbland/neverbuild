@@ -4,7 +4,7 @@ import { StaticRouter } from 'react-router-dom';
 import express from 'express';
 import { renderToString } from 'react-dom/server';
 // Components
-import App from './App';
+import App from './js/App';
 // Assets
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
 const svgSprite = require('svg-sprite-loader/runtime/sprite.build');

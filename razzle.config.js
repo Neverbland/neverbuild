@@ -15,7 +15,7 @@ module.exports = {
     // Import Resolving
     // ====================
     // Allow absolute paths in imports, e.g. import Button from 'components/Button'
-    appConfig.resolve.modules.push('src');
+    appConfig.resolve.modules.push('src', 'src/js', 'src/css', 'src/images');
 
     // ESLint
     // ====================

@@ -7,7 +7,7 @@ import styles from 'styles/components/header.scss';
 const Header = () => (
   <header className={styles.header}>
     <div className={styles.headerInner}>
-      <Link className={styles.logo} to="/">
+      <Link className={styles.logo} to="/" href="#oi">
         Neverbuild
       </Link>
       <nav className={styles.nav}>
