@@ -1,32 +1,52 @@
-html {
+*,
+*:after,
+*:before {
   box-sizing: border-box;
-  font-size: 100%;
 }
 
-*,
-*::after,
-*::before {
-  box-sizing: inherit;
+html {
+  font-size: 100%;
+  overflow-y: scroll;
 }
 
 body {
-  background-color: $background-colour;
-  color: $colour;
-  position: relative;
+  color: $black;
+  margin: 0;
+  font-family: 'Muli', sans-serif;
 }
 
 *::selection {
-  background: $selection-colour;
+  background: $black;
+  color: $white;
   text-shadow: none;
 }
 
-%no-list-style,
-.no-list-style {
-  list-style: none;
+img {
+  max-width: 100%;
+  vertical-align: middle;
 }
 
-ul {
-  &.no-list-style {
-    @extend %no-list-style;
-  }
+svg {
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+  @include link-colors($black, $black, $black, $black);
+}
+
+blockquote,
+figure {
+  margin: 0;
+}
+
+hr {
+  height: 1px;
+  background: #eae6e6;
+  border: 0;
+  margin: 0;
+}
+
+textarea {
+  resize: vertical;
 }

@@ -1,0 +1,8 @@
+.row {
+  display: grid;
+  grid-template-columns: [full-start] minmax(1.5rem,1fr) [main-start] minmax(0,800px) [main-end] minmax(1.5rem,1fr) [full-end];
+}
+
+.rowInner {
+  grid-column: main;
+}

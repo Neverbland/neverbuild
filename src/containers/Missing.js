@@ -3,13 +3,13 @@ import React from 'react';
 // Styles
 import styles from 'styles/containers/home.scss';
 
-const Home = () => (
+const Missing = () => (
   <div className={styles.home}>
-    <div className={styles.homeInner}>
+    <div className={styles.home__inner}>
       <h2>Welcome to Neverbuild</h2>
       <p>some stuff</p>
     </div>
   </div>
 );
 
-export default Home;
+export default Missing;

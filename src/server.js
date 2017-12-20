@@ -45,6 +45,7 @@ server
       assets.client.js
     }" defer crossorigin></script>`
 }
+            <link href="https://fonts.google.com/specimen/Muli?selection.family=Muli:400,600,700i,900" rel="stylesheet">
           </head>
           <body>
             ${svgSprite.stringify()}
