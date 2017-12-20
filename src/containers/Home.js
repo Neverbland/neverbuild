@@ -10,7 +10,7 @@ import logo from 'images/logo.svg';
 import spriteLogo from 'images/sprite/spriteLogo.svg';
 
 const Home = () => (
-  <div>
+  <div className={styles.home}>
     <div className={styles.homeHeader}>
       <img src={logo} className={styles.homeLogo} alt="logo" />
       <Icon glyph={spriteLogo} />
