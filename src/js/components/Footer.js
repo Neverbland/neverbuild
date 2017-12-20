@@ -3,7 +3,7 @@ import React from 'react';
 // Components
 import Icon from 'components/Icon';
 // Styles
-import styles from 'styles/components/footer.scss';
+import styles from 'css/components/footer.scss';
 
 const Footer = () => (
   <footer className={styles.footer}>

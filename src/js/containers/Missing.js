@@ -1,7 +1,7 @@
 // Dependencies
 import React from 'react';
 // Styles
-import styles from 'styles/containers/home.scss';
+import styles from 'css/containers/home.scss';
 
 const Missing = () => (
   <div className={styles.home}>

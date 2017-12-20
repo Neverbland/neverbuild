@@ -8,8 +8,8 @@ import Footer from 'components/Footer';
 import Home from 'containers/Home';
 import Missing from 'containers/Missing';
 // Styles
-import 'styles/app.scss';
-import styles from 'styles/containers/shell.scss';
+import 'css/app.scss';
+import styles from 'css/containers/shell.scss';
 
 const App = () => (
   <div className={styles.shell}>

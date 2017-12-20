@@ -1,7 +1,7 @@
 // Dependencies
 import React from 'react';
 // Styles
-import styles from 'styles/containers/home.scss';
+import styles from 'css/containers/home.scss';
 
 const Home = () => (
   <div className={styles.home}>
