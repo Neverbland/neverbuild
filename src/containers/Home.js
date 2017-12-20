@@ -1,13 +1,13 @@
 // Dependencies
 import React from 'react';
 // Components
-import Intro from 'components/Intro/Intro';
-import Icon from 'components/Icon/Icon';
+import Intro from 'components/Intro';
+import Icon from 'components/Icon';
 // Styles
-import styles from './Home.scss';
+import styles from 'styles/containers/Home.scss';
 // Assets
-import logo from '../../images/logo.svg';
-import spriteLogo from '../../images/sprite/spriteLogo.svg';
+import logo from 'images/logo.svg';
+import spriteLogo from 'images/sprite/spriteLogo.svg';
 
 const Home = () => (
   <div className={styles.home}>
