@@ -2,6 +2,7 @@
   body {
     margin: 0;
     padding: 0;
+    // TODO: we should fix Stylelint's or Prettier's rules so they play nicely together. Getting a lot of `Expected newline after ":" with a multi-line declaration` errors.
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
       sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   }

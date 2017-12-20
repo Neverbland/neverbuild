@@ -6,6 +6,11 @@ module.exports = {
     const appConfig = Object.assign({}, config);
     const isServer = target !== 'web';
 
+    // Import Resolving
+    // ====================
+    // Allow absolute paths in imports, e.g. import Button from 'components/Button'
+    appConfig.resolve.modules.push('src');
+
     // ESLint
     // ====================
     appConfig.module.rules.push({
