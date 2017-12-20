@@ -42,13 +42,16 @@ module.exports = {
     'global-require': [0],
     'import/no-dynamic-require': [0],
     'import/prefer-default-export': [0],
+    'jsx-a11y/anchor-is-valid': [0],
     'jsx-a11y/no-static-element-interactions': [0],
     'max-len': [0],
     'no-console': [0],
     'no-plusplus': [0],
-    radix: [0],
+    'no-underscore-dangle': [0],
     'react/forbid-prop-types': [0],
     'react/jsx-curly-brace-presence': [0],
+    'react/no-array-index-key': [0],
+    radix: [0],
     'react/jsx-filename-extension': [
       1,
       {
