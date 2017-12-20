@@ -21,6 +21,7 @@
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-react-jsx": "^6.24.1",
+    "browserslist": "^2.10.0",
     "eslint": "^4.13.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-react-app": "^2.0.1",
