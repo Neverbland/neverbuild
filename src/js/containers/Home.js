@@ -4,16 +4,28 @@ import React from 'react';
 import styles from 'css/containers/home.scss';
 // Components
 import withSSR from '../HOC/withSSR';
+// Services
+import cms from '../services/cms';
+
+const query = `{
+  allNews {
+    id
+    title
+    author {
+      name
+    }
+    link
+    content
+  }
+}`;
 
 class Home extends React.Component {
   // This works similarly to Next.js's `getInitialProps`
-  static getInitialData() {
-    return fetch('http://hipsterjesus.com/api/')
-      .then(res => res.json())
-      .then(res => ({ text: res.text }));
+  static async getInitialData() {
+    return cms(query);
   }
   render() {
-    const { isLoading, text, error } = this.props;
+    const { isLoading, data, error } = this.props;
     return (
       <main className={styles.home}>
         <div className={styles.homeInner}>
@@ -22,7 +34,16 @@ class Home extends React.Component {
           {error && (
             <div style={{ color: 'red' }}>{JSON.stringify(error, null, 2)}</div>
           )}
-          {text && <div>{text}</div>}
+          {data &&
+            data.allNews.map((news, i) => (
+              <div key={i}>
+                <h2>
+                  <a href={news.link}>{news.title}</a>
+                </h2>
+                <p>{news.author.name}</p>
+                <p>{news.content}</p>
+              </div>
+            ))}
         </div>
       </main>
     );
