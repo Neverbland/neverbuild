@@ -1,7 +1,10 @@
+// Dependencies
 import React from 'react';
 import Route from 'react-router-dom/Route';
 import Switch from 'react-router-dom/Switch';
+// Components
 import Home from 'containers/Home/Home';
+// Styles
 import 'styles/app.scss';
 
 const App = () => (

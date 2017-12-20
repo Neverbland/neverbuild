@@ -1,6 +1,8 @@
+// Dependencies
 import React from 'react';
 import { hydrate } from 'react-dom';
 import BrowserRouter from 'react-router-dom/BrowserRouter';
+// Components
 import App from 'App';
 
 hydrate(
