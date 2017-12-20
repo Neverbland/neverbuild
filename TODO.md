@@ -1,7 +1,0 @@
-- Styles
-  - SCSS/CSS Modules/CSS in JS?
-  - Stylelint + Stylelint Webpack integration
-- ESLint Webpack integration
-- SVG Loader
-- SVGO for `"lint-staged"`
-- Prettier example page
