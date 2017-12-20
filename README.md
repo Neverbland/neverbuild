@@ -7,11 +7,10 @@ Kickstarts a new React app
 - [x] Server Side Rendering
 - [x] React Router
 - [x] Automatic polyfilling (using Polyfill.io)
-- [ ] Prettier & ESLint
-- [ ] Stylelint
-- [ ] SVG sprites
-- [ ] Assets optimisation (png, jpg, svg, ...)
-- [ ] SCSS
+- [x] Prettier & ESLint
+- [x] Stylelint
+- [x] SVG sprites
+- [x] SCSS with CSS Modules
 
 ## Getting started
 
@@ -50,13 +49,9 @@ By default, runs tests related to files changed since the last commit.
 
 To debug the node server, you can use `razzle start --inspect`. This will start the node server and enable the inspector agent. For more information, see [this](https://nodejs.org/en/docs/inspector/).
 
-## Writing JS
+### `npm run svg:pretty`
 
-We use [EditorConfig](http://editorconfig.org/) for code consistency. Please see below to add support to your editor.
-
-## Writing CSS
-
-We use [BEM](https://en.bem.info/) across our projects.
+Optimises and formats SVGs across your project.
 
 ## Polyfills
 
@@ -65,9 +60,9 @@ We use [Polyfill.io](https://polyfill.io/v2/docs/) to polyfill missing Javascrip
 ## Recommended Tools
 
 - ESLint ([Atom Plugin](https://atom.io/packages/linter-eslint)/[Sublime Plugin](https://github.com/roadhump/SublimeLinter-eslint))
-- SASS Lint ([Atom Plugin](https://atom.io/packages/linter-sass-lint)/[Sublime Plugin](https://github.com/skovhus/SublimeLinter-contrib-sass-lint))
+- stylelint ([Atom Plugin](https://atom.io/packages/linter-stylelint)/[Sublime Plugin](https://github.com/kungfusheep/SublimeLinter-contrib-stylelint))
 - EditorConfig ([Atom Plugin](https://atom.io/packages/editorconfig)/[Sublime Plugin](https://github.com/sindresorhus/editorconfig-sublime))
-- Beautifier ([Atom Plugin](https://atom.io/packages/atom-beautify))
+- Beautifier ([Atom Plugin](https://atom.io/packages/prettier-atom))/[Sublime Plugin](https://github.com/danreeves/sublime-prettier))
 
 ## License
 
