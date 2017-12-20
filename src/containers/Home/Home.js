@@ -1,6 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
+
+// Components
+import Intro from 'components/Intro/Intro';
+
+// Styles
 import styles from './Home.scss';
+
+// Assets
+import logo from './logo.svg';
 
 const Home = () => (
   <div className={styles.home}>
@@ -8,10 +15,7 @@ const Home = () => (
       <img src={logo} className={styles.homeLogo} alt="logo" />
       <h2>Welcome to Neverbuild</h2>
     </div>
-    <p className={styles.homeIntro}>
-      To get started, edit <code>src/App.js</code> or <code>src/Home.js</code>{' '}
-      and save to reload.
-    </p>
+    <Intro />
     <ul className={styles.homeResources}>
       <li>
         <a href="https://github.com/jaredpalmer/razzle">Docs</a>
