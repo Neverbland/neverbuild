@@ -2,7 +2,6 @@ const path = require('path');
 const fs = require('fs');
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 const appDirectory = fs.realpathSync(process.cwd());
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
@@ -66,11 +65,15 @@ module.exports = {
               options: {
                 importLoaders: 1,
                 modules: true,
+                sourceMap: true,
                 localIdentName: '[name]__[local]--[hash:base64:5]'
               }
             },
             {
-              loader: require.resolve('sass-loader')
+              loader: require.resolve('sass-loader'),
+              options: {
+                sourceMap: true
+              }
             }
           ]
           : [
@@ -80,7 +83,8 @@ module.exports = {
               options: {
                 importLoaders: 1,
                 modules: true,
-                localIdentName: '[name]__[local]--[hash:base64:5]'
+                localIdentName: '[name]__[local]--[hash:base64:5]',
+                sourceMap: true
               }
             },
             {
