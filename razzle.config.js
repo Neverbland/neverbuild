@@ -19,6 +19,23 @@ module.exports = {
     // ESLint
     // ====================
     appConfig.module.rules.push({
+      enforce: 'pre',
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: [
+        {
+          loader: 'eslint-loader',
+          options: {
+            emitError: true,
+            configFile: '.eslintrc.js'
+          }
+        }
+      ]
+    });
+
+    // Babel
+    // ====================
+    appConfig.module.rules.push({
       test: /\.js$/,
       exclude: /node_modules/,
       use: [
@@ -27,13 +44,6 @@ module.exports = {
           options: {
             presets: ['razzle/babel'],
             plugins: ['transform-react-jsx']
-          }
-        },
-        {
-          loader: 'eslint-loader',
-          options: {
-            emitError: true,
-            configFile: '.eslintrc.js'
           }
         }
       ]
