@@ -48,6 +48,13 @@ module.exports = {
     'no-console': [0],
     'no-plusplus': [0],
     'no-underscore-dangle': [0],
+    'no-unused-vars': [
+      'warn',
+      {
+        args: 'none',
+        ignoreRestSiblings: true
+      }
+    ],
     'react/forbid-prop-types': [0],
     'react/jsx-curly-brace-presence': [0],
     'react/no-array-index-key': [0],

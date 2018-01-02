@@ -26,7 +26,7 @@ module.exports = {
         {
           loader: 'eslint-loader',
           options: {
-            emitError: true,
+            emitWarning: true,
             configFile: '.eslintrc.js'
           }
         }
