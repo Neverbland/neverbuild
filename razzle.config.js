@@ -5,6 +5,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const appDirectory = fs.realpathSync(process.cwd());
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
+const findRuleByLoader = (config, loader) => {
+  return config.find(x => x.loader && x.loader.includes(loader));
+};
 
 module.exports = {
   modify(config, { target, dev }) {
@@ -69,45 +72,45 @@ module.exports = {
         test: /\.scss$/,
         use: isServer
           ? [
-            'isomorphic-style-loader',
-            {
-              loader: require.resolve('css-loader'),
-              options: {
-                importLoaders: 1,
-                modules: true,
-                sourceMap: true,
-                localIdentName: '[name]__[local]--[hash:base64:5]'
+              'isomorphic-style-loader',
+              {
+                loader: require.resolve('css-loader'),
+                options: {
+                  importLoaders: 1,
+                  modules: true,
+                  sourceMap: true,
+                  localIdentName: '[name]__[local]--[hash:base64:5]'
+                }
+              },
+              {
+                loader: require.resolve('sass-loader'),
+                options: {
+                  sourceMap: true
+                }
               }
-            },
-            {
-              loader: require.resolve('sass-loader'),
-              options: {
-                sourceMap: true
-              }
-            }
-          ]
+            ]
           : [
-            require.resolve('style-loader'),
-            {
-              loader: require.resolve('css-loader'),
-              options: {
-                importLoaders: 1,
-                modules: true,
-                localIdentName: '[name]__[local]--[hash:base64:5]',
-                sourceMap: true
+              require.resolve('style-loader'),
+              {
+                loader: require.resolve('css-loader'),
+                options: {
+                  importLoaders: 1,
+                  modules: true,
+                  localIdentName: '[name]__[local]--[hash:base64:5]',
+                  sourceMap: true
+                }
+              },
+              {
+                loader: require.resolve('postcss-loader'),
+                options: postCSSLoaderOptions
+              },
+              {
+                loader: require.resolve('sass-loader'),
+                options: {
+                  sourceMap: true
+                }
               }
-            },
-            {
-              loader: require.resolve('postcss-loader'),
-              options: postCSSLoaderOptions
-            },
-            {
-              loader: require.resolve('sass-loader'),
-              options: {
-                sourceMap: true
-              }
-            }
-          ]
+            ]
       });
     } else if (!dev && !isServer) {
       appConfig.module.rules.push({
@@ -174,7 +177,8 @@ module.exports = {
 
     // SVG Sprite
     // ====================
-    appConfig.module.rules[2].exclude.push(resolveApp('src/images/sprite'));
+    const rule = findRuleByLoader(appConfig.module.rules, 'file-loader');
+    rule.exclude.push(resolveApp('src/images/sprite'));
     appConfig.module.rules.push({
       test: /\.svg$/,
       include: [resolveApp('src/images/sprite')],
