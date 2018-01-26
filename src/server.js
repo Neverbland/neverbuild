@@ -3,6 +3,7 @@ import 'isomorphic-fetch';
 import React from 'react';
 import { StaticRouter, matchPath } from 'react-router-dom';
 import express from 'express';
+import path from 'path';
 import { renderToString } from 'react-dom/server';
 // Components
 import App from './js/App';
@@ -16,7 +17,7 @@ const server = express();
 
 server
   .disable('x-powered-by')
-  .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
+  .use(express.static(path.resolve('build', 'public')))
   .get('/*', (req, res) => {
     // This data fetching technique came from a gist by @ryanflorence
     // @see https://gist.github.com/ryanflorence/efbe562332d4f1cc9331202669763741

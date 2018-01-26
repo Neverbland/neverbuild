@@ -3,23 +3,27 @@
   "version": "0.1.0",
   "license": "MIT",
   "lint-staged": {
-    "*.{js, scss}": ["prettier-eslint --write", "git add"]
+    "*.{js, scss}": [
+      "prettier-eslint --write",
+      "git add"
+    ]
   },
   "scripts": {
     "start": "razzle start",
     "build": "razzle build",
     "test": "razzle test --env=jsdom",
     "start:prod": "npm run build && NODE_ENV=production node build/server.js",
-    "svg:pretty":
-      "find src/images -name '*.svg' -type f -exec svgo --pretty --indent=2 '{}' \\;",
+    "svg:pretty": "find src/images -name '*.svg' -type f -exec svgo --pretty --indent=2 '{}' \\;",
     "precommit": "lint-staged"
   },
   "dependencies": {
     "autoprefixer": "^7.2.3",
+    "babel-runtime": "^6.26.0",
     "express": "^4.16.2",
     "extract-text-webpack-plugin": "^3.0.2",
     "isomorphic-fetch": "^2.2.1",
     "normalize.css": "^7.0.0",
+    "path": "^0.12.7",
     "postcss-flexbugs-fixes": "^3.2.0",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
