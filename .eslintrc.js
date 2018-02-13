@@ -69,6 +69,7 @@ module.exports = {
     'react/no-danger': [0],
     'react/prop-types': [0],
     'react/react-in-jsx-scope': [0],
-    'react/style-prop-object': [0]
+    'react/style-prop-object': [0],
+    'space-before-function-paren': ['error', 'never']
   }
 };
