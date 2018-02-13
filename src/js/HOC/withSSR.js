@@ -8,7 +8,7 @@ function getDisplayName(WrappedComponent) {
 
 // This is a Higher Order Component that abstracts duplicated data fetching
 // on the server and client.
-export default function (Page) {
+export default function(Page) {
   class withSSR extends React.Component {
     static getInitialData(ctx) {
       // Need to call the wrapped components getInitialData if it exists
