@@ -15,6 +15,40 @@ export default class MyDocument extends Document {
     return (
       <html lang="en">
         <Head>{this.props.styleTags}</Head>
+        <title>Neverbuild</title>
+        <meta
+          name="theme-color"
+          content="#212121"
+        />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1"
+        />
+        {/* https://css-tricks.com/essential-meta-tags-social-media/ */}
+        <meta
+          property="og:title"
+          content="Neverbuild"
+        />
+        <meta
+          property="og:description"
+          content="Kickstart Neverbland front-end projects"
+        />
+        <meta
+          property="og:image"
+          content="http://example.com/open-graph.png"
+        />
+        <meta
+          property="og:url"
+          content="http://example.com"
+        />
+        <meta
+          name="twitter:card"
+          content="summary_large_image"
+        />
+        <meta
+          name="description"
+          content="Kickstart Neverbland front-end project"
+        />
         <body>
           <Main />
           <NextScript />
