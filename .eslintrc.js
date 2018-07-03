@@ -66,6 +66,7 @@ module.exports = {
       }
     ],
     'react/jsx-no-bind': [0],
+    'react/jsx-max-props-per-line': [1, { maximum: 1 }],
     'react/no-danger': [0],
     'react/prop-types': [0],
     'react/react-in-jsx-scope': [0],
