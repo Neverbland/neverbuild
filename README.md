@@ -5,11 +5,9 @@
 - Built with NextJS
 - Styled Components
 - Apollo Client
-- Prop Types
 - ESLint
 - Prettier
 - EditorConfig
-- Polyfilling via Polyfill.io
 - SVG optimisation
 
 ## Getting started
@@ -35,6 +33,10 @@ You can use the following npm task to clean up your SVGs after exporting them fr
 ```bash
 npm run svg:pretty
 ```
+
+## Polyfills
+
+In the advent of needing a polyfill, please refer to [polyfill.io](https://polyfill.io/g).
 
 ## Recommended Tools
 
