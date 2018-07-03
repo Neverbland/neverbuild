@@ -1,0 +1,15 @@
+{
+  "name": "neverbuild",
+  "version": "4.0.0",
+  "description": "Kickstart Neverbland front-end projects",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Neverbland/neverbuild.git"
+  },
+  "author": "Neverbland",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/Neverbland/neverbuild/issues"
+  },
+  "homepage": "https://github.com/Neverbland/neverbuild#readme"
+}
