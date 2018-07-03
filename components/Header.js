@@ -8,13 +8,13 @@ const Header = () => (
         href="/"
         prefetch
       >
-        Home
+        <a>Home</a>
       </Link>
       <Link
         href="/about"
         prefetch
       >
-        About
+        <a>About</a>
       </Link>
     </nav>
   </header>
