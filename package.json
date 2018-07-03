@@ -2,6 +2,11 @@
   "name": "neverbuild",
   "version": "4.0.0",
   "description": "Kickstart Neverbland front-end projects",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Neverbland/neverbuild.git"
@@ -11,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/Neverbland/neverbuild/issues"
   },
-  "homepage": "https://github.com/Neverbland/neverbuild#readme"
+  "homepage": "https://github.com/Neverbland/neverbuild#readme",
+  "dependencies": {
+    "next": "^6.1.1",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  }
 }
