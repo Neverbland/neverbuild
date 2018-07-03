@@ -6,7 +6,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "svg:pretty": "find src/images -name '*.svg' -type f -exec svgo --pretty --indent=2 '{}' \\;"
   },
   "lint-staged": {
     "*.{js, json}": [
@@ -38,6 +39,7 @@
     "eslint-plugin-react": "^7.10.0",
     "husky": "^0.14.3",
     "lint-staged": "^7.2.0",
-    "prettier-eslint-cli": "^4.7.1"
+    "prettier-eslint-cli": "^4.7.1",
+    "svgo": "^1.0.5"
   }
 }

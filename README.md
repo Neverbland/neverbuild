@@ -28,6 +28,14 @@ npm run dev
 
 The project will run on `http://localhost:3000`. To use another port, you can run `npm run dev -- -p <your port here>`.
 
+## SVG
+
+You can use the following npm task to clean up your SVGs after exporting them from Sketch/Illustrator:
+
+```bash
+npm run svg:pretty
+```
+
 ## Recommended Tools
 
 - ESLint ([Atom Plugin](https://atom.io/packages/linter-eslint)/[Sublime Plugin](https://github.com/roadhump/SublimeLinter-eslint))
