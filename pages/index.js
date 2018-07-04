@@ -1,13 +1,7 @@
 import styled from 'styled-components';
 import Head from '../components/Head';
+import Main from '../components/Main';
 import Placeholder from '../components/Placeholder';
-
-const Main = styled.main`
-  grid-column: content;
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  grid-gap: 24px;
-`;
 
 export default () => (
   <Main>
