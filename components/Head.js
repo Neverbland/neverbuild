@@ -1,4 +1,5 @@
 import NextHead from 'next/head';
+import { black } from '../utils/styling/colors';
 
 const defaultTitle = 'Neverbland';
 const defaultDescription = 'Kickstart Neverbland front-end projects';
@@ -22,7 +23,7 @@ const Head = ({
     />
     <meta
       name="theme-color"
-      content="#212121"
+      content={black}
     />
     <meta
       name="viewport"

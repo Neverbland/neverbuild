@@ -1,4 +1,5 @@
 import { injectGlobal } from 'styled-components';
+import { black } from './colors';
 
 export default function injectGlobalStyles() {
   return injectGlobal`
@@ -10,6 +11,7 @@ export default function injectGlobalStyles() {
     font-family: sans-serif;
     overflow-y: scroll;
     margin: 0;
+    color: ${black};
   }
 
   a {
