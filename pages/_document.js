@@ -53,6 +53,10 @@ export default class MyDocument extends Document {
             name="description"
             content="Kickstart Neverbland front-end project"
           />
+          <link
+            rel="shortcut icon"
+            href="../static/favicons/favicon.ico"
+          />
         </Head>
         <body>
           <div dangerouslySetInnerHTML={{ __html: sprite.stringify() }} />
