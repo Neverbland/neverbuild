@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Head from '../components/Head';
 import styled from 'styled-components';
 
 const Main = styled.main`
@@ -7,13 +7,7 @@ const Main = styled.main`
 
 export default () => (
   <Main>
-    <Head>
-      <title>About | Neverbuild</title>
-      <meta
-        property="og:title"
-        content="About | Neverbuild"
-      />
-    </Head>
+    <Head title="About" />
     {'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'.repeat(10)}
   </Main>
 );
