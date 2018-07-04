@@ -8,7 +8,7 @@ module.exports = {
         {
           loader: 'svg-sprite-loader',
           options: {
-            includePaths: ['/images/sprite'],
+            includePaths: ['/static/images/sprite'],
             symbolId: '[name]_[hash]',
             esModule: false
           }

@@ -3,7 +3,7 @@ import Icon from './Icon';
 
 const Footer = () => (
   <footer>
-    <Icon glyph={require('../images/sprite/logo.svg')} />
+    <Icon glyph={require('../static/images/sprite/logo.svg')} />
   </footer>
 );
 
