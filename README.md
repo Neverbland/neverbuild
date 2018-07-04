@@ -55,4 +55,4 @@ In the advent of needing a polyfill, please refer to [polyfill.io](https://polyf
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT)
+[WTFPL](http://www.wtfpl.net/)
