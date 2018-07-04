@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styled from 'styled-components';
 import HeaderLink from './HeaderLink';
 
@@ -6,6 +7,7 @@ const Wrapper = styled.header`
   justify-content: space-between;
   align-items: center;
   grid-column: content;
+  height: 120px;
 `;
 
 const Nav = styled.nav`
@@ -14,9 +16,16 @@ const Nav = styled.nav`
   grid-auto-flow: column;
 `;
 
+const Logo = styled.a`
+  font-size: 24px;
+  display: block;
+`;
+
 const Header = () => (
   <Wrapper>
-    <h1>Neverbuild</h1>
+    <Link href="/">
+      <Logo>Neverbuild</Logo>
+    </Link>
     <Nav>
       <HeaderLink
         name="Home"

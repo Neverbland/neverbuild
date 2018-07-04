@@ -10,6 +10,7 @@ const Wrapper = styled.footer`
   justify-content: center;
   height: 96px;
   grid-column: edge;
+  margin-top: 24px;
 `;
 
 const Logo = styled(Icon)`
