@@ -2,8 +2,6 @@ import Document, { Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 import sprite from 'svg-sprite-loader/runtime/sprite.build';
 
-const spriteContent = sprite.stringify();
-
 export default class MyDocument extends Document {
   static getInitialProps({ renderPage }) {
     const sheet = new ServerStyleSheet();
@@ -19,7 +17,6 @@ export default class MyDocument extends Document {
       <html lang="en">
         <Head>
           {this.props.styleTags}
-          <title>Neverbuild</title>
           <meta
             name="theme-color"
             content="#212121"
@@ -29,10 +26,6 @@ export default class MyDocument extends Document {
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
           {/* https://css-tricks.com/essential-meta-tags-social-media/ */}
-          <meta
-            property="og:title"
-            content="Neverbuild"
-          />
           <meta
             property="og:description"
             content="Kickstart Neverbland front-end projects"
