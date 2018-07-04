@@ -2,13 +2,13 @@
 
 ## Features
 
-- Built with NextJS
-- Styled Components
-- Apollo Client
-- ESLint
-- Prettier
-- EditorConfig
-- SVG optimisation
+- [x] Built with NextJS
+- [x] Styled Components
+- [x] Apollo Client
+- [x] ESLint
+- [x] Prettier
+- [x] EditorConfig
+- [x] SVG optimisation
 
 ## Getting started
 
