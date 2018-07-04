@@ -1,13 +1,13 @@
 // Components
 import Icon from './Icon';
 import styled from 'styled-components';
-import { black } from '../utils/styling/colors';
+import colors from '../utils/styling/colors';
 
 const Wrapper = styled.footer`
+  background: ${colors.black};
   display: flex;
   align-items: center;
   justify-content: center;
-  background: ${black};
   height: 96px;
   grid-column: edge;
 `;
