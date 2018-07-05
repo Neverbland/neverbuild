@@ -27,14 +27,8 @@ const Header = () => (
       <Logo>Neverbuild</Logo>
     </Link>
     <Nav>
-      <HeaderLink
-        name="Home"
-        href="/"
-      />
-      <HeaderLink
-        name="About"
-        href="/about"
-      />
+      <HeaderLink name="Home" href="/" />
+      <HeaderLink name="About" href="/about" />
     </Nav>
   </Wrapper>
 );

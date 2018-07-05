@@ -17,58 +17,25 @@ const Head = ({
         ? `${title} | ${defaultTitle}`
         : `${defaultTitle} | ${defaultDescription}`}
     </title>
-    <meta
-      name="description"
-      content={description || defaultDescription}
-    />
-    <meta
-      name="theme-color"
-      content={colors.black}
-    />
+    <meta name="description" content={description || defaultDescription} />
+    <meta name="theme-color" content={colors.black} />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <link
-      rel="icon"
-      href="/static/favicon.ico"
-    />
-    <meta
-      property="og:url"
-      content={url || defaultOGURL}
-    />
-    <meta
-      property="og:title"
-      content={title || defaultTitle}
-    />
+    <link rel="icon" href="/static/favicon.ico" />
+    <meta property="og:url" content={url || defaultOGURL} />
+    <meta property="og:title" content={title || defaultTitle} />
     <meta
       property="og:description"
       content={description || defaultDescription}
     />
-    <meta
-      name="twitter:site"
-      content={url || defaultOGURL}
-    />
-    <meta
-      name="twitter:card"
-      content="summary_large_image"
-    />
-    <meta
-      name="twitter:image"
-      content={ogImage || defaultOGImage}
-    />
-    <meta
-      property="og:image"
-      content={ogImage || defaultOGImage}
-    />
-    <meta
-      property="og:image:width"
-      content="1200"
-    />
-    <meta
-      property="og:image:height"
-      content="630"
-    />
+    <meta name="twitter:site" content={url || defaultOGURL} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImage || defaultOGImage} />
+    <meta property="og:image" content={ogImage || defaultOGImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     {/* Add additional icons here */}
     {/* <link
       rel="icon"
