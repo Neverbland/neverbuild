@@ -34,7 +34,7 @@ module.exports = {
     }
   },
   rules: {
-    'arrow-body-style': [0],
+    'arrow-body-style': ['error', 'as-needed'],
     'arrow-parens': [0],
     'class-methods-use-this': [0],
     'comma-dangle': ['error', 'never'],
@@ -45,7 +45,7 @@ module.exports = {
     'jsx-a11y/anchor-is-valid': [0],
     'jsx-a11y/no-static-element-interactions': [0],
     'max-len': [0],
-    'no-console': [0],
+    'no-console': [1],
     'no-plusplus': [0],
     'no-underscore-dangle': [0],
     'no-unused-vars': [
@@ -67,7 +67,6 @@ module.exports = {
     ],
     'react/jsx-no-bind': [0],
     'react/no-danger': [0],
-    'react/prop-types': [0],
     'react/react-in-jsx-scope': [0],
     'react/style-prop-object': [0],
     'space-before-function-paren': ['error', 'never']
