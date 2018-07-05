@@ -4,10 +4,10 @@
 
 - [x] Built with NextJS
 - [x] Styled Components
-- [x] Apollo Client
 - [x] ESLint
 - [x] Prettier
 - [x] EditorConfig
+- [x] SVG spriting
 - [x] SVG optimisation
 
 ## Getting started
@@ -30,7 +30,7 @@ The project will run on `http://localhost:3000`. To use another port, you can ru
 
 ### Prettifying
 
-You can use the following npm task to clean up your SVGs after exporting them from Sketch/Illustrator:
+You can use the following npm task to clean up your SVGs after having exported them from Sketch/Illustrator:
 
 ```bash
 npm run svg:pretty
@@ -38,7 +38,7 @@ npm run svg:pretty
 
 ### Spriting
 
-By adding SVGs to the `/sprite` directory, you can require them using the `Icon` component, which will add the SVG in question to a sprite sheet that loads on initial rendering.
+By adding SVGs to the `/sprite` directory, you can require them using the `Icon` component, which will add the SVG in question to a sprite sheet that loads on the initial render.
 
 ## Polyfills
 
