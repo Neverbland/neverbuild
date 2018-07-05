@@ -7,7 +7,6 @@ import Footer from '../components/Footer';
 const SiteWrapper = styled.div`
   height: 100vh;
   display: grid;
-  grid-template-rows: auto 1fr auto;
   grid-template-columns:
     [edge-start] minmax(16px, 1fr) [content-start] minmax(0, 1200px)
     [content-end] minmax(16px, 1fr) [edge-end];
