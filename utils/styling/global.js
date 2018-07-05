@@ -1,8 +1,5 @@
-import { injectGlobal } from 'styled-components';
-import colors from './colors';
-
-export default function injectGlobalStyles() {
-  return injectGlobal`
+export default function getGlobalStyles(theme) {
+  return `
   *, *:before, *:after {
     box-sizing: inherit;
   }
@@ -11,7 +8,7 @@ export default function injectGlobalStyles() {
     font-family: sans-serif;
     overflow-y: scroll;
     margin: 0;
-    color: ${colors.black};
+    color: ${theme.colors.black};
   }
 
   a {
@@ -39,5 +36,5 @@ export default function injectGlobalStyles() {
   textarea {
     resize: vertical;
   }
-`;
+  `;
 }
