@@ -1,5 +1,3 @@
-const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
-
 module.exports = {
   webpack: config => {
     config.module.rules.push({
