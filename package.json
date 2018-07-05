@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "precommit": "lint-staged",
-    "svg:pretty": "find src/images -name '*.svg' -type f -exec svgo --pretty --indent=2 '{}' \\;"
+    "svg:pretty": "find static/images -name '*.svg' -type f -exec svgo --pretty --indent=2 '{}' \\;"
   },
   "lint-staged": {
     "*.{js, json}": [
