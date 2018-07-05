@@ -1,10 +1,9 @@
 // Components
-import Icon from './Icon';
 import styled from 'styled-components';
-import colors from '../utils/styling/colors';
+import Icon from './Icon';
 
 const Wrapper = styled.footer`
-  background: ${colors.black};
+  background: ${props => props.theme.colors.black};
   display: flex;
   align-items: center;
   justify-content: center;
