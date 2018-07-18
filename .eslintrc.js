@@ -55,7 +55,7 @@ module.exports = {
         ignoreRestSiblings: true
       }
     ],
-    'react/forbid-prop-types': [0],
+    'react/prop-types': [0],
     'react/jsx-curly-brace-presence': [0],
     'react/no-array-index-key': [0],
     radix: [0],
