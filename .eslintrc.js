@@ -46,6 +46,7 @@ module.exports = {
     'jsx-a11y/no-static-element-interactions': [0],
     'max-len': [0],
     'no-console': [1],
+    'no-mixed-operators': [0],
     'no-plusplus': [0],
     'no-underscore-dangle': [0],
     'no-unused-vars': [
