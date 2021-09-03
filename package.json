@@ -12,7 +12,8 @@
     "react-dom": "^15.4.1",
     "react-router": "^2.8.1",
     "react": "^15.4.1",
-    "@neverbland/react-scripts": "latest"
+    "@neverbland/react-scripts": "latest",
+    "@snyk/protect": "latest"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -20,10 +21,13 @@
     "test": "react-scripts test --env=jsdom",
     "lint:js": "eslint src/js/**/*.js",
     "lint:scss": "sass-lint 'src/css/**/*.scss' -v -q",
-    "svg:pretty": "find src/images -name '*.svg' -type f -exec svgo --pretty --indent=2 '{}' \\;"
+    "svg:pretty": "find src/images -name '*.svg' -type f -exec svgo --pretty --indent=2 '{}' \\;",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
-  "sasslintConfig": "./node_modules/@neverbland/react-scripts/config/sasslint.yml"
+  "sasslintConfig": "./node_modules/@neverbland/react-scripts/config/sasslint.yml",
+  "snyk": true
 }
